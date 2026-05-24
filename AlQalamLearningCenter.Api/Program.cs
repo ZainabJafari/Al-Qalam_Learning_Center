@@ -1,4 +1,7 @@
 using AlQalamLearningCenter.Api.Data;
+using AlQalamLearningCenter.Api.Interfaces;
+using AlQalamLearningCenter.Api.Options;
+using AlQalamLearningCenter.Api.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -10,6 +13,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(
         options.UseSqlServer(
             builder.Configuration.GetConnectionString(
                 "DefaultConnection")));
+
+builder.Services.AddScoped<IDonationService, DonationService>();
+builder.Services.AddScoped<IStripeCheckoutService, StripeCheckoutService>();
+
+builder.Services.Configure<StripeSettings>(
+    builder.Configuration.GetSection("Stripe"));
 
 builder.Services
     .AddControllers()

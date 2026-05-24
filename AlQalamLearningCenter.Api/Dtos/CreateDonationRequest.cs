@@ -12,6 +12,4 @@ public class CreateDonationRequest
     public string? DonorEmail { get; set; }
     public string? DonorCountry { get; set; }
     public string? Message { get; set; }
-
-    public bool CoverProcessingFee { get; set; }
 }

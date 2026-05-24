@@ -27,6 +27,7 @@ public class ApplicationDbContext : DbContext
             entity.Property(donation => donation.DonorEmail).HasMaxLength(254);
             entity.Property(donation => donation.DonorCountry).HasMaxLength(2);
             entity.Property(donation => donation.Message).HasMaxLength(1000);
+            entity.Property(donation => donation.StripeCheckoutSessionId).HasMaxLength(255);
         });
     }
 }

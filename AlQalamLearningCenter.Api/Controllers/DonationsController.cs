@@ -1,6 +1,5 @@
-using AlQalamLearningCenter.Api.Data;
 using AlQalamLearningCenter.Api.Dtos;
-using AlQalamLearningCenter.Api.Models;
+using AlQalamLearningCenter.Api.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AlQalamLearningCenter.Api.Controllers;
@@ -9,15 +8,27 @@ namespace AlQalamLearningCenter.Api.Controllers;
 [Route("api/[controller]")]
 public class DonationsController : ControllerBase
 {
-    private readonly ApplicationDbContext _dbContext;
+    private readonly IDonationService _donationService;
+    private readonly IStripeCheckoutService _stripeCheckoutService;
 
-    public DonationsController(ApplicationDbContext dbContext)
+    public DonationsController(
+        IDonationService donationService,
+        IStripeCheckoutService stripeCheckoutService)
     {
-        _dbContext = dbContext;
+        _donationService = donationService;
+        _stripeCheckoutService = stripeCheckoutService;
+    }
+
+    [HttpGet("{id:guid}")]
+    public async Task<ActionResult<DonationResponse>> GetById(Guid id)
+    {
+        var donation = await _donationService.GetByIdAsync(id);
+
+        return donation is null ? NotFound() : Ok(donation);
     }
 
     [HttpPost]
-    public async Task<ActionResult<CreateDonationResponse>> Create(
+    public async Task<ActionResult<DonationResponse>> Create(
         CreateDonationRequest request)
     {
         if (request.AmountMinor <= 0)
@@ -28,9 +39,7 @@ public class DonationsController : ControllerBase
             });
         }
 
-        var currency = NormalizeRequiredCode(request.Currency, 3);
-
-        if (currency is null)
+        if (NormalizeRequiredCode(request.Currency, 3) is null)
         {
             return BadRequest(new
             {
@@ -38,7 +47,7 @@ public class DonationsController : ControllerBase
             });
         }
 
-        if (!TryNormalizeOptionalCode(request.DonorCountry, 2, out var donorCountry))
+        if (!IsValidOptionalCode(request.DonorCountry, 2))
         {
             return BadRequest(new
             {
@@ -46,51 +55,38 @@ public class DonationsController : ControllerBase
             });
         }
 
-        var donation = CreateDonation(request, currency, donorCountry);
-
-        _dbContext.Donations.Add(donation);
-        await _dbContext.SaveChangesAsync();
+        var response = await _donationService.CreateAsync(request);
 
         return CreatedAtAction(
-            actionName: nameof(Create),
-            routeValues: new { id = donation.Id },
-            value: CreateResponse(donation));
+            actionName: nameof(GetById),
+            routeValues: new { id = response.Id },
+            value: response);
     }
 
-    private static Donation CreateDonation(
-        CreateDonationRequest request,
-        string currency,
-        string? donorCountry)
+    [HttpPost("{id:guid}/checkout")]
+    public async Task<ActionResult<CreateCheckoutSessionResponse>> CreateCheckout(
+        Guid id)
     {
-        return new Donation
+        try
         {
-            Id = Guid.NewGuid(),
-            AmountMinor = request.AmountMinor,
-            Currency = currency,
-            Frequency = request.Frequency,
-            Status = DonationStatus.Pending,
-            DonorName = NormalizeOptionalText(request.DonorName),
-            DonorEmail = NormalizeOptionalText(request.DonorEmail),
-            DonorCountry = donorCountry,
-            Message = NormalizeOptionalText(request.Message),
-            CoverProcessingFee = request.CoverProcessingFee,
-            TotalAmountMinor = request.AmountMinor,
-            CreatedAt = DateTimeOffset.UtcNow
-        };
-    }
+            var checkoutUrl = await _stripeCheckoutService.CreateCheckoutUrlAsync(id);
 
-    private static CreateDonationResponse CreateResponse(Donation donation)
-    {
-        return new CreateDonationResponse
+            return Ok(new CreateCheckoutSessionResponse
+            {
+                CheckoutUrl = checkoutUrl
+            });
+        }
+        catch (KeyNotFoundException)
         {
-            Id = donation.Id,
-            AmountMinor = donation.AmountMinor,
-            Currency = donation.Currency,
-            Frequency = donation.Frequency,
-            Status = donation.Status,
-            TotalAmountMinor = donation.TotalAmountMinor,
-            CreatedAt = donation.CreatedAt
-        };
+            return NotFound();
+        }
+        catch (InvalidOperationException exception)
+        {
+            return BadRequest(new
+            {
+                message = exception.Message
+            });
+        }
     }
 
     private static string? NormalizeRequiredCode(string? value, int length)
@@ -105,27 +101,17 @@ public class DonationsController : ControllerBase
         return code.Length == length ? code : null;
     }
 
-    private static bool TryNormalizeOptionalCode(
+    private static bool IsValidOptionalCode(
         string? value,
-        int length,
-        out string? code)
+        int length)
     {
-        code = null;
-
         if (string.IsNullOrWhiteSpace(value))
         {
             return true;
         }
 
-        code = value.Trim().ToUpperInvariant();
+        var code = value.Trim().ToUpperInvariant();
 
         return code.Length == length;
-    }
-
-    private static string? NormalizeOptionalText(string? value)
-    {
-        return string.IsNullOrWhiteSpace(value)
-            ? null
-            : value.Trim();
     }
 }

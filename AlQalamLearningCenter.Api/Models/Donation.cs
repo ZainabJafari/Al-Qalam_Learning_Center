@@ -16,9 +16,7 @@ public class Donation
 
     public string? Message { get; set; }
 
-    public bool CoverProcessingFee { get; set; }
-    public int? ProcessingFeeMinor { get; set; }
-    public int TotalAmountMinor { get; set; }
+    public string? StripeCheckoutSessionId { get; set; }
 
     public DateTimeOffset CreatedAt { get; set; } = DateTimeOffset.UtcNow;
     public DateTimeOffset? PaidAt { get; set; }
