@@ -1,0 +1,21 @@
+# Build output
+**/bin/
+**/obj/
+
+# User-specific IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Environment/local secrets
+*.Development.local.json
+*.local.json
+
+# Node dependencies and Angular output
+**/node_modules/
+**/dist/
+**/.angular/

@@ -1,4 +1,22 @@
+using AlQalamLearningCenter.Api.Data;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<ApplicationDbContext>(
+    options =>
+        options.UseSqlServer(
+            builder.Configuration.GetConnectionString(
+                "DefaultConnection")));
+
+builder.Services
+    .AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -24,5 +42,7 @@ app.MapGet("/api/health", () =>
     });
 })
 .WithName("HealthCheck");
+
+app.MapControllers();
 
 app.Run();
