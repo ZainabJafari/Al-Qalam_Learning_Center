@@ -47,6 +47,36 @@ public class DonationService : IDonationService
         return donation is null ? null : ToResponse(donation);
     }
 
+    public async Task<bool> MarkPaidByStripeCheckoutSessionIdAsync(
+        string stripeCheckoutSessionId)
+    {
+        var donation = await _dbContext.Donations
+            .FirstOrDefaultAsync(donation =>
+                donation.StripeCheckoutSessionId == stripeCheckoutSessionId);
+
+        if (donation is null)
+        {
+            return false;
+        }
+
+        if (donation.Status == DonationStatus.Paid)
+        {
+            return true;
+        }
+
+        if (donation.Status != DonationStatus.Pending)
+        {
+            return false;
+        }
+
+        donation.Status = DonationStatus.Paid;
+        donation.PaidAt = DateTimeOffset.UtcNow;
+
+        await _dbContext.SaveChangesAsync();
+
+        return true;
+    }
+
     private static DonationResponse ToResponse(Donation donation)
     {
         return new DonationResponse
