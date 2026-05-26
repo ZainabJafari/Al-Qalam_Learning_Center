@@ -12,6 +12,7 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<Donation> Donations => Set<Donation>();
+    public DbSet<StripeWebhookEvent> StripeWebhookEvents => Set<StripeWebhookEvent>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -28,6 +29,17 @@ public class ApplicationDbContext : DbContext
             entity.Property(donation => donation.DonorCountry).HasMaxLength(2);
             entity.Property(donation => donation.Message).HasMaxLength(1000);
             entity.Property(donation => donation.StripeCheckoutSessionId).HasMaxLength(255);
+        });
+
+        modelBuilder.Entity<StripeWebhookEvent>(entity =>
+        {
+            entity.ToTable("StripeWebhookEvents");
+
+            entity.Property(stripeEvent => stripeEvent.StripeEventId).HasMaxLength(255);
+            entity.Property(stripeEvent => stripeEvent.EventType).HasMaxLength(100);
+
+            entity.HasIndex(stripeEvent => stripeEvent.StripeEventId)
+                .IsUnique();
         });
     }
 }

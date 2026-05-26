@@ -7,4 +7,6 @@ public interface IDonationService
     Task<DonationResponse> CreateAsync(CreateDonationRequest request);
     Task<DonationResponse?> GetByIdAsync(Guid id);
     Task<bool> MarkPaidByStripeCheckoutSessionIdAsync(string stripeCheckoutSessionId);
+    Task<bool> HasProcessedStripeEventAsync(string stripeEventId);
+    Task RecordProcessedStripeEventAsync(string stripeEventId, string eventType);
 }

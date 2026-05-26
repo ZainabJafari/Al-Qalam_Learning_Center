@@ -52,6 +52,11 @@ public class StripeWebhookController : ControllerBase
             return BadRequest();
         }
 
+        if (await _donationService.HasProcessedStripeEventAsync(stripeEvent.Id))
+        {
+            return Ok();
+        }
+
         if (stripeEvent.Type == CheckoutSessionCompleted)
         {
             var session = stripeEvent.Data.Object as Session;
@@ -62,6 +67,10 @@ public class StripeWebhookController : ControllerBase
                     session.Id);
             }
         }
+
+        await _donationService.RecordProcessedStripeEventAsync(
+            stripeEvent.Id,
+            stripeEvent.Type);
 
         return Ok();
     }

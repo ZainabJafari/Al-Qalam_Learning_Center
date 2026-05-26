@@ -77,6 +77,28 @@ public class DonationService : IDonationService
         return true;
     }
 
+    public async Task<bool> HasProcessedStripeEventAsync(string stripeEventId)
+    {
+        return await _dbContext.StripeWebhookEvents
+            .AsNoTracking()
+            .AnyAsync(stripeEvent => stripeEvent.StripeEventId == stripeEventId);
+    }
+
+    public async Task RecordProcessedStripeEventAsync(
+        string stripeEventId,
+        string eventType)
+    {
+        _dbContext.StripeWebhookEvents.Add(new StripeWebhookEvent
+        {
+            Id = Guid.NewGuid(),
+            StripeEventId = stripeEventId,
+            EventType = eventType,
+            ProcessedAt = DateTimeOffset.UtcNow
+        });
+
+        await _dbContext.SaveChangesAsync();
+    }
+
     private static DonationResponse ToResponse(Donation donation)
     {
         return new DonationResponse
