@@ -1,0 +1,108 @@
+<div class="donation-options" aria-label="Choose donation frequency">
+  <button
+    class="option-button"
+    [class.is-selected]="selectedFrequency === 'OneTime'"
+    type="button"
+    (click)="selectFrequency('OneTime')"
+  >
+    One-time
+  </button>
+  <button
+    class="option-button"
+    [class.is-selected]="selectedFrequency === 'Monthly'"
+    type="button"
+    (click)="selectFrequency('Monthly')"
+  >
+    Monthly
+  </button>
+  <button
+    class="option-button"
+    [class.is-selected]="selectedFrequency === 'Yearly'"
+    type="button"
+    (click)="selectFrequency('Yearly')"
+  >
+    Yearly
+  </button>
+</div>
+
+<div class="donation-options" aria-label="Choose donation amount">
+  <button
+    class="option-button"
+    [class.is-selected]="selectedAmountMinor === 2500"
+    type="button"
+    (click)="selectAmount(2500)"
+  >
+    $25
+  </button>
+  <button
+    class="option-button"
+    [class.is-selected]="selectedAmountMinor === 5500"
+    type="button"
+    (click)="selectAmount(5500)"
+  >
+    $55
+  </button>
+  <button
+    class="option-button"
+    [class.is-selected]="selectedAmountMinor === 10000"
+    type="button"
+    (click)="selectAmount(10000)"
+  >
+    $100
+  </button>
+</div>
+
+<div class="donor-fields">
+  <label>
+    Name
+    <input
+      name="donorName"
+      type="text"
+      autocomplete="name"
+      [(ngModel)]="donorName"
+      placeholder="Your name"
+    />
+  </label>
+
+  <label>
+    Email
+    <input
+      name="donorEmail"
+      type="email"
+      autocomplete="email"
+      [(ngModel)]="donorEmail"
+      placeholder="you@example.com"
+    />
+  </label>
+
+  <label class="full-width">
+    Message
+    <textarea
+      name="donorMessage"
+      rows="3"
+      [(ngModel)]="donorMessage"
+      placeholder="Optional message"
+    ></textarea>
+  </label>
+</div>
+
+<div class="donation-summary" aria-label="Donation summary">
+  <span>Summary</span>
+  <strong>{{ selectedAmountLabel }} {{ selectedFrequencyLabel }}</strong>
+  <p [hidden]="!trimmedDonorEmail">
+    Receipt email: {{ trimmedDonorEmail }}
+  </p>
+</div>
+
+<button
+  class="donate-button"
+  type="button"
+  [disabled]="isDonationLoading"
+  (click)="startDonation()"
+>
+  {{ isDonationLoading ? 'Starting checkout...' : 'Donate ' + selectedAmountLabel }}
+</button>
+
+<p class="error-message" [hidden]="!donationError">
+  {{ donationError }}
+</p>

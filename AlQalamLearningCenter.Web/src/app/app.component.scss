@@ -1,21 +1,10 @@
-:host {
+﻿:host {
   display: block;
   min-height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #f7f9fc;
-  color: #1f2937;
-}
-
-.app-shell {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 4rem 1.25rem;
-}
-
-h1 {
-  margin: 0 0 0.75rem;
-}
-
-p {
-  margin: 0.35rem 0;
+  font-family: "Gill Sans MT", "Candara", sans-serif;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(184, 225, 221, 0.42), transparent 24rem),
+    radial-gradient(circle at 85% 18%, rgba(58, 145, 136, 0.1), transparent 20rem),
+    linear-gradient(135deg, #fbfffe 0%, #edf8f6 100%);
+  color: #062925;
 }

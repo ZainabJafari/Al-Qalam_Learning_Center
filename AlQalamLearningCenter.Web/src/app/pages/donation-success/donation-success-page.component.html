@@ -1,0 +1,38 @@
+<main class="confirmation-shell">
+  <section class="confirmation-card">
+    <p class="eyebrow">Donation confirmed</p>
+    <h1>Thank you for your support</h1>
+    <p class="intro">
+      Your donation helps keep a safe learning space open for girls in Afghanistan.
+    </p>
+
+    <div class="summary-card" *ngIf="donation$ | async as donation; else missingDonation">
+      <span>{{ donation.status === 'Pending' ? 'Confirming payment' : 'Donation summary' }}</span>
+      <strong>{{ formatAmount(donation.amountMinor, donation.currency) }}</strong>
+      <p>Frequency: {{ formatFrequency(donation.frequency) }}</p>
+      <p>
+        Status:
+        <span
+          class="status-pill"
+          [class.is-paid]="donation.status === 'Paid'"
+          [class.is-pending]="donation.status === 'Pending'"
+        >
+          {{ donation.status }}
+        </span>
+      </p>
+      <p class="status-note" [hidden]="donation.status !== 'Pending'">
+        Stripe completed checkout. We are waiting for the webhook confirmation.
+      </p>
+    </div>
+
+    <ng-template #missingDonation>
+      <div class="summary-card">
+        <span>Donation summary</span>
+        <strong>Payment completed</strong>
+        <p>We could not load the donation details right now, but Stripe sent you back after checkout.</p>
+      </div>
+    </ng-template>
+
+    <a routerLink="/" class="home-link">Back to home</a>
+  </section>
+</main>
