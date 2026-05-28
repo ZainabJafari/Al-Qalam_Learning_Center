@@ -1,94 +1,92 @@
-﻿<app-site-navbar />
+<app-site-navbar />
 
 <main class="home-shell">
-  <section class="hero-section" id="mission" aria-label="Al Qalam Learning Center hero">
+  <section class="hero-section" id="mission" [attr.aria-label]="'home.heroAriaLabel' | t">
     <div class="hero-content">
-      <p class="eyebrow">Education is a right</p>
-      <h1>A safe place for girls to learn</h1>
+      <p class="eyebrow">{{ 'home.eyebrow' | t }}</p>
+      <h1>{{ 'home.title' | t }}</h1>
+      <p class="hero-statement">{{ 'home.heroStatement' | t }}</p>
       <p class="hero-text">
-        Al Qalam Learning Center gives girls in Afghanistan a calm, modern classroom for English, art, school subjects, and practical skills.
+        {{ 'home.heroText' | t }}
       </p>
 
       <div class="hero-actions">
-        <a routerLink="/donate" class="primary-link">Support the school</a>
-        <a href="#school" class="secondary-link">See our classes</a>
+        <a routerLink="/donate" class="primary-link">{{ 'home.supportStudent' | t }}</a>
+        <a routerLink="/about" class="secondary-link">{{ 'home.aboutSchool' | t }}</a>
       </div>
 
-      <div class="hero-points" aria-label="School highlights">
-        <span>Safe classroom</span>
-        <span>Modern lessons</span>
-        <span>Girls first</span>
+      <div class="hero-points" [attr.aria-label]="'home.highlightsLabel' | t">
+        <span>{{ 'home.safeClassroom' | t }}</span>
+        <span>{{ 'home.girlsEducation' | t }}</span>
+        <span>{{ 'home.futureSkills' | t }}</span>
       </div>
     </div>
   </section>
 
   <section class="promise-section" id="school">
     <div class="promise-copy">
-      <p class="eyebrow">About our school</p>
-      <h2>A trusted place to study, grow, and feel safe</h2>
+      <p class="eyebrow">{{ 'home.promiseEyebrow' | t }}</p>
+      <h2>{{ 'home.promiseTitle' | t }}</h2>
       <p>
-        The school is a small rented learning space created for girls who want to keep studying. It is built to feel respectful, organized, and welcoming, with lessons that support both school knowledge and personal confidence.
+        {{ 'home.promiseText' | t }}
       </p>
     </div>
 
-    <div class="promise-list" aria-label="School strengths">
+    <div class="promise-list" [attr.aria-label]="'home.strengthsLabel' | t">
       <article>
-        <span>01</span>
-        <h3>Safe environment</h3>
-        <p>A calm classroom where girls can focus, ask questions, and learn without fear.</p>
+        <h3>{{ 'home.safeEnvironment' | t }}</h3>
+        <p>{{ 'home.safeEnvironmentText' | t }}</p>
       </article>
       <article>
-        <span>02</span>
-        <h3>Modern learning</h3>
-        <p>English, creativity, school subjects, and practical skills taught with care.</p>
+        <h3>{{ 'home.modernLearning' | t }}</h3>
+        <p>{{ 'home.modernLearningText' | t }}</p>
       </article>
       <article>
-        <span>03</span>
-        <h3>Hope for the future</h3>
-        <p>Education gives girls confidence, choices, and a stronger voice in their lives.</p>
+        <h3>{{ 'home.hopeFuture' | t }}</h3>
+        <p>{{ 'home.hopeFutureText' | t }}</p>
       </article>
     </div>
   </section>
 
   <section class="courses-section" id="courses">
     <div class="section-heading">
-      <p class="eyebrow">Our courses</p>
-      <h2>Learning that opens doors</h2>
+      <p class="eyebrow">{{ 'home.coursesEyebrow' | t }}</p>
+      <h2>{{ 'home.coursesTitle' | t }}</h2>
     </div>
 
     <div class="course-grid">
       <article class="course-card">
-        <h3>English</h3>
-        <p>Speaking, reading, vocabulary, and everyday communication.</p>
+        <h3>{{ 'home.englishTitle' | t }}</h3>
+        <p>{{ 'home.englishText' | t }}</p>
       </article>
       <article class="course-card">
-        <h3>Drawing and art</h3>
-        <p>Creative expression, color, sketching, and confidence through imagination.</p>
+        <h3>{{ 'home.artTitle' | t }}</h3>
+        <p>{{ 'home.artText' | t }}</p>
       </article>
       <article class="course-card">
-        <h3>School subjects</h3>
-        <p>Support in reading, writing, math, and other important subjects.</p>
+        <h3>{{ 'home.schoolSubjectsTitle' | t }}</h3>
+        <p>{{ 'home.schoolSubjectsText' | t }}</p>
       </article>
       <article class="course-card accent-card">
-        <h3>Practical skills</h3>
-        <p>Skills that help girls feel capable, independent, and prepared for life.</p>
+        <h3>{{ 'home.practicalSkillsTitle' | t }}</h3>
+        <p>{{ 'home.practicalSkillsText' | t }}</p>
       </article>
     </div>
   </section>
 
   <section class="rights-section" id="story">
-    <div class="rights-photo" role="img" aria-label="Girl facing barriers to education"></div>
+    <div class="rights-photo" role="img" [attr.aria-label]="'home.rightsPhotoLabel' | t"></div>
 
     <div class="rights-copy">
-      <p class="eyebrow">Why this matters</p>
-      <h2>Education should never be taken from girls</h2>
+      <p class="eyebrow">{{ 'home.whyMatters' | t }}</p>
+      <h2>{{ 'home.rightsTitle' | t }}</h2>
       <p>
-        In Afghanistan, many girls face serious barriers to continuing school. Al Qalam Learning Center is a small but meaningful answer: a safe classroom where girls are reminded that their dreams, minds, and futures matter.
+        {{ 'home.rightsTextOne' | t }}
       </p>
       <p>
-        Every girl has the right to learn. Every lesson is a step toward confidence, dignity, and possibility.
+        {{ 'home.rightsTextTwo' | t }}
       </p>
-      <a routerLink="/donate" class="primary-link">Help a girl keep learning</a>
+      <a routerLink="/donate" class="primary-link">{{ 'home.helpGirl' | t }}</a>
     </div>
   </section>
 </main>

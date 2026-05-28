@@ -1,0 +1,81 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <section class="footer-brand" [attr.aria-label]="'footer.brandLabel' | t">
+      <a routerLink="/" class="brand-link" [attr.aria-label]="'common.brandHomeLabel' | t">
+        <span class="brand-mark">AQ</span>
+        <span>
+          <strong>Al Qalam</strong>
+          <small>{{ 'footer.learningCenter' | t }}</small>
+        </span>
+      </a>
+
+      <p>
+        {{ 'footer.brandText' | t }}
+      </p>
+    </section>
+
+    <section class="footer-contact" [attr.aria-label]="'footer.contactLabel' | t">
+      <h2 class="footer-title">{{ 'footer.contactTitle' | t }}</h2>
+      <dl class="contact-list">
+        <div>
+          <dt>{{ 'footer.phone' | t }}</dt>
+          <dd><a href="tel:+46701234567">+46 70 123 45 67</a></dd>
+        </div>
+        <div>
+          <dt>{{ 'footer.address' | t }}</dt>
+          <dd>{{ 'footer.addressText' | t }}</dd>
+        </div>
+        <div>
+          <dt>{{ 'footer.email' | t }}</dt>
+          <dd><a href="mailto:hello@alqalamlearning.org">hello&#64;alqalamlearning.org</a></dd>
+        </div>
+      </dl>
+
+      <div class="social-links" [attr.aria-label]="'footer.socialLabel' | t">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="5"></rect>
+            <circle cx="12" cy="12" r="3.5"></circle>
+            <circle cx="17" cy="7" r="1"></circle>
+          </svg>
+        </a>
+        <a href="#" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5.4 19.2 6.5 16A7 7 0 1 1 9 18.1z"></path>
+            <path d="M9.2 8.7c.3 2.9 2.2 4.9 5.1 5.6l1.1-1.4-1.8-1-1 1a5.5 5.5 0 0 1-2.4-2.5l1-1-1-1.8z"></path>
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 8h2V5h-2.4C11.2 5 10 6.4 10 8.6V11H8v3h2v5h3v-5h2.4l.6-3h-3V8.9c0-.6.3-.9 1-.9z"></path>
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.5" y="6.5" width="17" height="11" rx="3"></rect>
+            <path d="m10.5 9.4 5 2.6-5 2.6z"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <nav class="footer-links" [attr.aria-label]="'footer.linksLabel' | t">
+      <h2 class="footer-title">{{ 'footer.linksTitle' | t }}</h2>
+      <a routerLink="/about">{{ 'nav.about' | t }}</a>
+      <a routerLink="/contact">{{ 'nav.contact' | t }}</a>
+      <a routerLink="/" fragment="courses">{{ 'nav.courses' | t }}</a>
+      <a routerLink="/" fragment="story">{{ 'footer.whyMatters' | t }}</a>
+      <a routerLink="/donate">{{ 'nav.donate' | t }}</a>
+    </nav>
+
+    <section class="footer-support" [attr.aria-label]="'footer.supportLabel' | t">
+      <p>{{ 'footer.supportText' | t }}</p>
+      <a routerLink="/donate" class="footer-cta">{{ 'footer.supportCta' | t }}</a>
+    </section>
+  </div>
+
+  <div class="footer-bottom">
+    <span>&copy; {{ year }} Al Qalam Learning Center</span>
+    <span>{{ 'footer.rightText' | t }}</span>
+  </div>
+</footer>

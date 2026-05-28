@@ -1,0 +1,102 @@
+<app-site-navbar />
+
+<main class="contact-shell">
+  <section class="contact-hero" aria-labelledby="hero-title">
+    <p>{{ 'contact.heroEyebrow' | t }}</p>
+    <h1 id="hero-title">{{ 'contact.heroTitle' | t }}</h1>
+    <span>
+      {{ 'contact.heroText' | t }}
+    </span>
+  </section>
+
+  <section class="contact-heading" aria-labelledby="contact-title">
+    <p class="eyebrow">{{ 'contact.headingEyebrow' | t }}</p>
+    <h1 id="contact-title">
+      {{ 'contact.headingTitleStart' | t }} <span>{{ 'contact.headingTitleHighlight' | t }}</span>
+    </h1>
+    <p>
+      {{ 'contact.headingText' | t }}
+    </p>
+  </section>
+
+  <section class="contact-grid" [attr.aria-label]="'contact.detailsLabel' | t">
+    <article class="contact-card">
+      <div class="icon-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21s7-5.6 7-12a7 7 0 0 0-14 0c0 6.4 7 12 7 12z"></path>
+          <circle cx="12" cy="9" r="2.4"></circle>
+        </svg>
+      </div>
+      <h2>{{ 'contact.address' | t }}</h2>
+      <p>{{ 'contact.street' | t }}</p>
+      <p>{{ 'contact.cityCountry' | t }}</p>
+    </article>
+
+    <article class="contact-card">
+      <div class="icon-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M6.6 4.8 9 4l2.1 4.3-1.7 1.1a10.6 10.6 0 0 0 5.2 5.2l1.1-1.7L20 15l-.8 2.4c-.3 1-1.3 1.7-2.4 1.5A14.3 14.3 0 0 1 5.1 7.2c-.2-1.1.5-2.1 1.5-2.4z"></path>
+        </svg>
+      </div>
+      <h2>{{ 'contact.phone' | t }}</h2>
+      <p><a href="tel:+46701234567">+46 70 123 45 67</a></p>
+      <p>{{ 'contact.whatsapp' | t }}: +46 70 123 45 67</p>
+    </article>
+
+    <article class="contact-card">
+      <div class="icon-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <rect x="4" y="6" width="16" height="12" rx="2"></rect>
+          <path d="m5 8 7 5 7-5"></path>
+        </svg>
+      </div>
+      <h2>{{ 'contact.email' | t }}</h2>
+      <p><a href="mailto:hello@alqalamlearning.org">hello&#64;alqalamlearning.org</a></p>
+    </article>
+
+    <article class="contact-card">
+      <div class="icon-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="8"></circle>
+          <path d="M12 7v5l3.5 2"></path>
+        </svg>
+      </div>
+      <h2>{{ 'contact.officeHours' | t }}</h2>
+      <p>{{ 'contact.days' | t }}</p>
+      <p>{{ 'contact.hours' | t }}</p>
+    </article>
+  </section>
+
+  <section class="follow-section" aria-labelledby="follow-title">
+    <p class="eyebrow">{{ 'contact.followEyebrow' | t }}</p>
+    <h2 id="follow-title">{{ 'contact.followTitle' | t }}</h2>
+    <p>{{ 'contact.followText' | t }}</p>
+
+    <div class="social-links" [attr.aria-label]="'contact.socialLabel' | t">
+      <a href="#" aria-label="Instagram" class="instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="4" width="16" height="16" rx="5"></rect>
+          <circle cx="12" cy="12" r="3.5"></circle>
+          <circle cx="17" cy="7" r="1"></circle>
+        </svg>
+      </a>
+      <a href="#" aria-label="Facebook" class="facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 8h2V5h-2.4C11.2 5 10 6.4 10 8.6V11H8v3h2v5h3v-5h2.4l.6-3h-3V8.9c0-.6.3-.9 1-.9z"></path>
+        </svg>
+      </a>
+      <a href="#" aria-label="YouTube" class="youtube">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3.5" y="6.5" width="17" height="11" rx="3"></rect>
+          <path d="m10.5 9.4 5 2.6-5 2.6z"></path>
+        </svg>
+      </a>
+      <a href="#" aria-label="WhatsApp" class="whatsapp">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5.4 19.2 6.5 16A7 7 0 1 1 9 18.1z"></path>
+          <path d="M9.2 8.7c.3 2.9 2.2 4.9 5.1 5.6l1.1-1.4-1.8-1-1 1a5.5 5.5 0 0 1-2.4-2.5l1-1-1-1.8z"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+</main>

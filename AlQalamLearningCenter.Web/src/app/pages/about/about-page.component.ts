@@ -4,12 +4,10 @@ import { SiteNavbarComponent } from '../../components/site-navbar/site-navbar.co
 import { TranslatePipe } from '../../i18n/translate.pipe';
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'app-about-page',
   standalone: true,
   imports: [RouterLink, SiteNavbarComponent, TranslatePipe],
-  templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.scss'
+  templateUrl: './about-page.component.html',
+  styleUrl: './about-page.component.scss'
 })
-export class HomePageComponent {
-  title = 'Al Qalam Learning Center';
-}
+export class AboutPageComponent {}

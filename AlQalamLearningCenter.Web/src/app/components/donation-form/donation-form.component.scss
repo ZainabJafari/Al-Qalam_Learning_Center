@@ -18,7 +18,7 @@
   background: rgba(255, 255, 255, 0.68);
   color: #1c2d25;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 800;
 }
 
@@ -39,7 +39,7 @@
   display: grid;
   gap: 0.35rem;
   color: #334a40;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.9rem;
   font-weight: 800;
 }
@@ -72,7 +72,7 @@
   border-radius: 18px;
   padding: 1rem;
   background: rgba(224, 241, 236, 0.62);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .donation-summary span {
@@ -90,7 +90,7 @@
 
 .donation-summary p {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.92rem;
   line-height: 1.4;
 }
@@ -103,7 +103,7 @@
   background: #0f5c56;
   color: #fffdf6;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 800;
   box-shadow: 0 14px 30px rgba(15, 92, 86, 0.24);
@@ -117,7 +117,7 @@
 .error-message {
   margin: 1rem 0 0;
   color: #9f2d20;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.95rem;
 }
 

@@ -1,25 +1,31 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { finalize, switchMap } from 'rxjs';
+import { LanguageService } from '../../i18n/language.service';
+import { TranslatePipe } from '../../i18n/translate.pipe';
 import { DonationService } from '../../services/donation.service';
 import { CreateDonationRequest, DonationFrequency } from '../../types/donation.models';
 
 @Component({
   selector: 'app-donation-form',
-  imports: [FormsModule],
+  standalone: true,
+  imports: [FormsModule, TranslatePipe],
   templateUrl: './donation-form.component.html',
   styleUrl: './donation-form.component.scss'
 })
 export class DonationFormComponent {
   isDonationLoading = false;
-  donationError = '';
+  donationErrorKey = '';
   selectedAmountMinor = 2500;
   selectedFrequency: DonationFrequency = 'OneTime';
   donorName = '';
   donorEmail = '';
   donorMessage = '';
 
-  constructor(private readonly donationService: DonationService) {}
+  constructor(
+    private readonly donationService: DonationService,
+    private readonly languageService: LanguageService
+  ) {}
 
   selectAmount(amountMinor: number): void {
     this.selectedAmountMinor = amountMinor;
@@ -35,14 +41,14 @@ export class DonationFormComponent {
 
   get selectedFrequencyLabel(): string {
     if (this.selectedFrequency === 'Monthly') {
-      return 'monthly';
+      return this.languageService.translate('donationForm.monthlyLower');
     }
 
     if (this.selectedFrequency === 'Yearly') {
-      return 'yearly';
+      return this.languageService.translate('donationForm.yearlyLower');
     }
 
-    return 'one-time';
+    return this.languageService.translate('donationForm.oneTimeLower');
   }
 
   get trimmedDonorEmail(): string {
@@ -51,7 +57,7 @@ export class DonationFormComponent {
 
   startDonation(): void {
     this.isDonationLoading = true;
-    this.donationError = '';
+    this.donationErrorKey = '';
 
     const request: CreateDonationRequest = {
       amountMinor: this.selectedAmountMinor,
@@ -75,7 +81,7 @@ export class DonationFormComponent {
           window.location.href = checkout.checkoutUrl;
         },
         error: () => {
-          this.donationError = 'Could not start donation checkout. Please try again.';
+          this.donationErrorKey = 'donationForm.checkoutError';
         }
       });
   }

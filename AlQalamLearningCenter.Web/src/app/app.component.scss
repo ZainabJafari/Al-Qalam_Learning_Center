@@ -1,7 +1,7 @@
 ﻿:host {
   display: block;
   min-height: 100vh;
-  font-family: "Gill Sans MT", "Candara", sans-serif;
+  font-family: var(--font-sans);
   background:
     radial-gradient(circle at 10% 12%, rgba(184, 225, 221, 0.42), transparent 24rem),
     radial-gradient(circle at 85% 18%, rgba(58, 145, 136, 0.1), transparent 20rem),

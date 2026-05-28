@@ -1,11 +1,11 @@
-<div class="donation-options" aria-label="Choose donation frequency">
+<div class="donation-options" [attr.aria-label]="'donationForm.frequencyLabel' | t">
   <button
     class="option-button"
     [class.is-selected]="selectedFrequency === 'OneTime'"
     type="button"
     (click)="selectFrequency('OneTime')"
   >
-    One-time
+    {{ 'donationForm.oneTime' | t }}
   </button>
   <button
     class="option-button"
@@ -13,7 +13,7 @@
     type="button"
     (click)="selectFrequency('Monthly')"
   >
-    Monthly
+    {{ 'donationForm.monthly' | t }}
   </button>
   <button
     class="option-button"
@@ -21,11 +21,11 @@
     type="button"
     (click)="selectFrequency('Yearly')"
   >
-    Yearly
+    {{ 'donationForm.yearly' | t }}
   </button>
 </div>
 
-<div class="donation-options" aria-label="Choose donation amount">
+<div class="donation-options" [attr.aria-label]="'donationForm.amountLabel' | t">
   <button
     class="option-button"
     [class.is-selected]="selectedAmountMinor === 2500"
@@ -54,43 +54,43 @@
 
 <div class="donor-fields">
   <label>
-    Name
+    {{ 'donationForm.name' | t }}
     <input
       name="donorName"
       type="text"
       autocomplete="name"
       [(ngModel)]="donorName"
-      placeholder="Your name"
+      [placeholder]="'donationForm.namePlaceholder' | t"
     />
   </label>
 
   <label>
-    Email
+    {{ 'donationForm.email' | t }}
     <input
       name="donorEmail"
       type="email"
       autocomplete="email"
       [(ngModel)]="donorEmail"
-      placeholder="you@example.com"
+      [placeholder]="'donationForm.emailPlaceholder' | t"
     />
   </label>
 
   <label class="full-width">
-    Message
+    {{ 'donationForm.message' | t }}
     <textarea
       name="donorMessage"
       rows="3"
       [(ngModel)]="donorMessage"
-      placeholder="Optional message"
+      [placeholder]="'donationForm.messagePlaceholder' | t"
     ></textarea>
   </label>
 </div>
 
-<div class="donation-summary" aria-label="Donation summary">
-  <span>Summary</span>
+<div class="donation-summary" [attr.aria-label]="'donationForm.summaryLabel' | t">
+  <span>{{ 'donationForm.summary' | t }}</span>
   <strong>{{ selectedAmountLabel }} {{ selectedFrequencyLabel }}</strong>
   <p [hidden]="!trimmedDonorEmail">
-    Receipt email: {{ trimmedDonorEmail }}
+    {{ 'donationForm.receiptEmail' | t }}: {{ trimmedDonorEmail }}
   </p>
 </div>
 
@@ -100,9 +100,9 @@
   [disabled]="isDonationLoading"
   (click)="startDonation()"
 >
-  {{ isDonationLoading ? 'Starting checkout...' : 'Donate ' + selectedAmountLabel }}
+  {{ isDonationLoading ? ('donationForm.startingCheckout' | t) : (('donationForm.donateButton' | t) + ' ' + selectedAmountLabel) }}
 </button>
 
-<p class="error-message" [hidden]="!donationError">
-  {{ donationError }}
+<p class="error-message" [hidden]="!donationErrorKey">
+  {{ donationErrorKey | t }}
 </p>

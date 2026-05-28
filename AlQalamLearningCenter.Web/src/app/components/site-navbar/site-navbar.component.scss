@@ -10,7 +10,7 @@
 .site-navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
   width: 100%;
   min-height: 5.2rem;
@@ -24,43 +24,24 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
   color: #f5fffd;
   text-decoration: none;
 }
 
-.brand-mark {
-  display: grid;
-  width: 2.7rem;
-  height: 2.7rem;
-  place-items: center;
-  border-radius: 50%;
-  background: #b8e1dd;
-  color: #062925;
-  font-family: "Georgia", serif;
-  font-weight: 900;
-}
-
-.brand strong,
-.brand small {
+.brand-logo {
   display: block;
-  line-height: 1.05;
-}
-
-.brand strong {
-  font-size: 1rem;
-  letter-spacing: 0.01em;
-}
-
-.brand small {
-  color: rgba(245, 255, 253, 0.68);
-  font-size: 0.78rem;
+  width: 10.5rem;
+  height: 3.9rem;
+  object-fit: cover;
+  object-position: center 70%;
+  border-radius: 10px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: clamp(0.8rem, 2vw, 1.4rem);
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -84,6 +65,25 @@
   box-shadow: 0 12px 28px rgba(58, 145, 136, 0.35);
 }
 
+.language-toggle {
+  border: 1px solid rgba(245, 255, 253, 0.25);
+  border-radius: 999px;
+  padding: 0.78rem 1rem;
+  background: rgba(245, 255, 253, 0.1);
+  color: #f5fffd;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.language-toggle:hover {
+  background: rgba(245, 255, 253, 0.18);
+}
+
+:host-context([dir='rtl']) .nav-links {
+  margin-right: auto;
+  margin-left: 0;
+}
+
 @media (max-width: 720px) {
   .site-navbar {
     min-height: auto;
@@ -98,6 +98,8 @@
   .nav-links {
     order: 3;
     width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     justify-content: space-around;
     border-top: 1px solid rgba(184, 225, 221, 0.16);
     padding-top: 0.7rem;
@@ -105,7 +107,8 @@
 }
 
 @media (max-width: 430px) {
-  .nav-cta {
+  .nav-cta,
+  .language-toggle {
     display: none;
   }
 }

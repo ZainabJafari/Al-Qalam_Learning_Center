@@ -11,33 +11,16 @@
   position: relative;
   display: grid;
   align-items: center;
-  min-height: min(720px, calc(100vh - 6.5rem));
-  overflow: hidden;
-  border: 1px solid rgba(6, 41, 37, 0.08);
-  border-left: 0;
-  border-right: 0;
-  padding: clamp(7rem, 11vw, 9rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2)) clamp(2rem, 5vw, 4rem);
+  min-height: min(760px, calc(100vh - 2.5rem));
+  padding: clamp(7.5rem, 11vw, 9.5rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2)) clamp(3rem, 6vw, 5rem);
   background:
-    linear-gradient(90deg, rgba(251, 255, 254, 0.98) 0%, rgba(251, 255, 254, 0.92) 38%, rgba(251, 255, 254, 0.46) 58%, rgba(251, 255, 254, 0.04) 100%),
-    url('/images/girl-studying.png') center right / cover;
-  box-shadow: 0 28px 80px rgba(6, 41, 37, 0.14);
-}
-
-.hero-section::after {
-  content: "";
-  position: absolute;
-  inset: auto 2rem 2rem auto;
-  width: min(36vw, 24rem);
-  height: min(36vw, 24rem);
-  border-radius: 50%;
-  background: rgba(184, 225, 221, 0.2);
-  pointer-events: none;
+    linear-gradient(90deg, rgba(6, 41, 37, 0.78) 0%, rgba(6, 41, 37, 0.58) 38%, rgba(6, 41, 37, 0.18) 67%, rgba(6, 41, 37, 0.04) 100%),
+    linear-gradient(0deg, rgba(6, 41, 37, 0.32), rgba(6, 41, 37, 0.01) 48%),
+    url('/images/bg.png') center / cover;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 560px);
+  width: min(100%, 640px);
 }
 
 .promise-section,
@@ -62,12 +45,12 @@ h2,
 h3 {
   margin: 0;
   color: var(--first);
-  font-family: "Trebuchet MS", "Gill Sans MT", sans-serif;
-  letter-spacing: -0.045em;
+  font-family: var(--font-sans);
+  letter-spacing: 0;
 }
 
 h1 {
-  max-width: 10ch;
+  max-width: 11ch;
   font-size: clamp(3rem, 6.8vw, 6.1rem);
   line-height: 0.94;
 }
@@ -82,7 +65,6 @@ h3 {
   font-size: 1.45rem;
 }
 
-.hero-text,
 .promise-copy p,
 .course-card p,
 .rights-copy p,
@@ -93,8 +75,28 @@ h3 {
 
 .hero-text {
   max-width: 34rem;
-  margin: 1.15rem 0 0;
+  margin: 0.85rem 0 0;
+  color: rgba(248, 255, 252, 0.82);
   font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.72;
+}
+
+.hero-section .eyebrow,
+.hero-section h1,
+.hero-statement {
+  color: #f8fffc;
+}
+
+.hero-section .eyebrow {
+  color: #f4c96d;
+}
+
+.hero-statement {
+  max-width: 36rem;
+  margin-top: 1rem;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 850;
+  line-height: 1.12;
 }
 
 .hero-actions {
@@ -128,6 +130,17 @@ h3 {
   background: rgba(255, 255, 255, 0.54);
 }
 
+.hero-section .primary-link {
+  background: #f4c96d;
+  color: var(--first);
+}
+
+.hero-section .secondary-link {
+  border-color: rgba(248, 255, 252, 0.34);
+  background: rgba(248, 255, 252, 0.1);
+  color: #f8fffc;
+}
+
 .hero-points {
   display: flex;
   flex-wrap: wrap;
@@ -145,12 +158,17 @@ h3 {
   font-weight: 900;
 }
 
+.hero-section .hero-points span {
+  border-color: rgba(248, 255, 252, 0.24);
+  background: rgba(6, 41, 37, 0.38);
+  color: #f8fffc;
+}
+
 .promise-section,
 .courses-section,
 .rights-section {
   width: min(calc(100% - 2rem), 1180px);
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline: auto;
   margin-top: clamp(4rem, 8vw, 7rem);
 }
 
@@ -229,9 +247,6 @@ h3 {
 @media (max-width: 940px) {
   .hero-section {
     min-height: 680px;
-    background:
-      linear-gradient(180deg, rgba(251, 255, 254, 0.36) 0%, rgba(251, 255, 254, 0.96) 62%),
-      url('/images/girl-studying.png') center top / cover;
   }
 
   .promise-section,
@@ -248,7 +263,6 @@ h3 {
 @media (max-width: 640px) {
   .hero-section {
     min-height: 720px;
-    border-radius: 30px;
     align-items: end;
     padding-top: 8.5rem;
   }
@@ -267,5 +281,3 @@ h3 {
     width: 100%;
   }
 }
-
-

@@ -1,0 +1,104 @@
+<app-site-navbar />
+
+<main class="about-shell">
+  <section class="about-hero" aria-labelledby="about-title">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ 'about.heroEyebrow' | t }}</p>
+      <h1 id="about-title">{{ 'about.heroTitle' | t }}</h1>
+      <p>
+        {{ 'about.heroText' | t }}
+      </p>
+      <a routerLink="/donate" class="primary-link">{{ 'about.supportSchool' | t }}</a>
+    </div>
+
+    <figure class="hero-image">
+      <img src="/images/all-girls-classroom.png" [alt]="'about.heroImageAlt' | t" />
+      <figcaption>{{ 'about.heroCaption' | t }}</figcaption>
+    </figure>
+  </section>
+
+  <section class="quick-grid" [attr.aria-label]="'about.quickGridLabel' | t">
+    <article>
+      <span>01</span>
+      <h2>{{ 'about.safeLearning' | t }}</h2>
+      <p>{{ 'about.safeLearningText' | t }}</p>
+    </article>
+    <article>
+      <span>02</span>
+      <h2>{{ 'about.usefulSkills' | t }}</h2>
+      <p>{{ 'about.usefulSkillsText' | t }}</p>
+    </article>
+    <article>
+      <span>03</span>
+      <h2>{{ 'about.futureBelief' | t }}</h2>
+      <p>{{ 'about.futureBeliefText' | t }}</p>
+    </article>
+  </section>
+
+  <section class="image-story" [attr.aria-label]="'about.imageStoryLabel' | t">
+    <figure class="story-card story-card-large">
+      <img src="/images/bg.png" [alt]="'about.storyImageOneAlt' | t" />
+      <figcaption>
+        <strong>{{ 'about.storyOneTitle' | t }}</strong>
+        {{ 'about.storyOneText' | t }}
+      </figcaption>
+    </figure>
+
+    <figure class="story-card">
+      <img src="/images/girl-studying.png" [alt]="'about.storyImageTwoAlt' | t" />
+      <figcaption>
+        <strong>{{ 'about.storyTwoTitle' | t }}</strong>
+        {{ 'about.storyTwoText' | t }}
+      </figcaption>
+    </figure>
+
+    <figure class="story-card">
+      <img src="/images/skills-learning.jpg" [alt]="'about.storyImageThreeAlt' | t" />
+      <figcaption>
+        <strong>{{ 'about.storyThreeTitle' | t }}</strong>
+        {{ 'about.storyThreeText' | t }}
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="vision-mission" [attr.aria-label]="'about.visionMissionLabel' | t">
+    <article>
+      <p class="eyebrow">{{ 'about.vision' | t }}</p>
+      <h2>{{ 'about.visionText' | t }}</h2>
+    </article>
+    <article>
+      <p class="eyebrow">{{ 'about.mission' | t }}</p>
+      <h2>{{ 'about.missionText' | t }}</h2>
+    </article>
+  </section>
+
+  <section class="values-section" aria-labelledby="values-title">
+    <div class="section-heading">
+      <p class="eyebrow">{{ 'about.valuesEyebrow' | t }}</p>
+      <h2 id="values-title">{{ 'about.valuesTitle' | t }}</h2>
+    </div>
+
+    <div class="values-grid">
+      <article>
+        <h3>{{ 'about.rightToEducation' | t }}</h3>
+        <p>{{ 'about.rightToEducationText' | t }}</p>
+      </article>
+      <article>
+        <h3>{{ 'about.equalWorth' | t }}</h3>
+        <p>{{ 'about.equalWorthText' | t }}</p>
+      </article>
+      <article>
+        <h3>{{ 'about.futureIndependence' | t }}</h3>
+        <p>{{ 'about.futureIndependenceText' | t }}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="support-section" aria-labelledby="support-title">
+    <div>
+      <p class="eyebrow">{{ 'about.keepDoorOpen' | t }}</p>
+      <h2 id="support-title">{{ 'about.supportTitle' | t }}</h2>
+    </div>
+    <a routerLink="/donate" class="primary-link">{{ 'about.donateSchool' | t }}</a>
+  </section>
+</main>
