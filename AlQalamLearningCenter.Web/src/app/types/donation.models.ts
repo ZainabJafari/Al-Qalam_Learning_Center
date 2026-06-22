@@ -25,3 +25,4 @@ export interface CreateCheckoutSessionResponse {
   // Frontend redirects the donor to this Stripe-hosted payment page.
   checkoutUrl: string;
 }
+

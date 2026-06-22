@@ -8,6 +8,7 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
   standalone: true,
   imports: [RouterLink, SiteNavbarComponent, TranslatePipe],
   templateUrl: './about-page.component.html',
-  styleUrl: './about-page.component.scss'
+  styleUrls: ['./about-page.component.scss']
 })
 export class AboutPageComponent {}
+

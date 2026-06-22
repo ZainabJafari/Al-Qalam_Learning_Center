@@ -8,6 +8,7 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
   standalone: true,
   imports: [DonationFormComponent, SiteNavbarComponent, TranslatePipe],
   templateUrl: './donate-page.component.html',
-  styleUrl: './donate-page.component.scss'
+  styleUrls: ['./donate-page.component.scss']
 })
 export class DonatePageComponent {}
+

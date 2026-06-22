@@ -7,6 +7,7 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
   standalone: true,
   imports: [RouterLink, TranslatePipe],
   templateUrl: './donation-cancel-page.component.html',
-  styleUrl: './donation-cancel-page.component.scss'
+  styleUrls: ['./donation-cancel-page.component.scss']
 })
 export class DonationCancelPageComponent {}
+

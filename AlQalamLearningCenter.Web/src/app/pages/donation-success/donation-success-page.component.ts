@@ -12,7 +12,7 @@ import { DonationFrequency, DonationResponse } from '../../types/donation.models
   standalone: true,
   imports: [CommonModule, RouterLink, TranslatePipe],
   templateUrl: './donation-success-page.component.html',
-  styleUrl: './donation-success-page.component.scss'
+  styleUrls: ['./donation-success-page.component.scss']
 })
 export class DonationSuccessPageComponent {
   donation$: Observable<DonationResponse | null>;
@@ -71,3 +71,4 @@ export class DonationSuccessPageComponent {
     return status;
   }
 }
+

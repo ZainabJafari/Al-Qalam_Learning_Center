@@ -34,3 +34,614 @@ a[href^='tel:'] {
   direction: ltr;
   unicode-bidi: embed;
 }
+
+.about-shell .about-school-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  width: min(calc(100% - 2rem), 1180px);
+  margin: clamp(3rem, 7vw, 5rem) auto 0;
+  border-radius: 8px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: #003d45;
+  color: #f8fffc;
+}
+
+.about-shell .about-school-copy h2 {
+  max-width: 13ch;
+  color: #f8fffc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 4.8vw, 4.2rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.about-shell .about-school-copy p:not(.eyebrow),
+.about-shell .about-school-list p {
+  color: rgba(248, 255, 252, 0.78);
+  line-height: 1.65;
+}
+
+.about-shell .about-school-copy p:not(.eyebrow) {
+  max-width: 35rem;
+  margin-top: 1rem;
+}
+
+.about-shell .about-school-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.about-shell .about-school-list article {
+  border: 1px solid rgba(248, 255, 252, 0.16);
+  border-radius: 8px;
+  padding: 1.1rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.about-shell .about-school-list h3 {
+  color: #f8fffc;
+}
+
+.about-shell .about-school-list p {
+  margin-top: 0.5rem;
+}
+
+.home-shell .hero-action-strip {
+  position: absolute;
+  right: auto;
+  bottom: clamp(-1.2rem, -1vw, -0.4rem);
+  left: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 8rem minmax(20rem, 27rem) minmax(22rem, 32rem);
+  width: min(100%, 1040px);
+  min-height: 5.8rem;
+}
+
+.home-shell .hero-scroll-link {
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: var(--hero-deep);
+  font-size: 0.78rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.home-shell .hero-scroll-link span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.home-shell .hero-video-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15rem;
+  overflow: hidden;
+  padding: 1.2rem;
+  background:
+    linear-gradient(90deg, rgba(0, 139, 150, 0.86), rgba(0, 149, 153, 0.72)),
+    url('/images/all-girls-classroom.png') center / cover;
+  color: #f8fffc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-shell .hero-play-icon {
+  display: grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.home-shell .hero-play-icon::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 0.42rem solid transparent;
+  border-bottom: 0.42rem solid transparent;
+  border-left: 0.62rem solid #d95c22;
+  transform: translateX(0.1rem);
+}
+
+.home-shell .hero-action-strip > div {
+  display: grid;
+  align-content: center;
+  gap: 0.7rem;
+  padding: clamp(1.2rem, 2vw, 1.6rem);
+  background: #003d45;
+  color: #f8fffc;
+}
+
+.home-shell .hero-action-strip > div p {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.home-shell .hero-action-strip > div a {
+  width: fit-content;
+  color: #f8fffc;
+  font-size: 0.92rem;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.home-shell .latest-updates-section {
+  width: 100%;
+  margin: clamp(5rem, 9vw, 7.5rem) 0 0;
+  padding: clamp(3rem, 6vw, 5rem) 0.5rem;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(244, 201, 109, 0.16), transparent 26%),
+    linear-gradient(135deg, #f8fffd 0%, #ffffff 48%, #edf9f7 100%);
+}
+
+.home-shell .latest-updates-label {
+  width: min(calc(100% - 1rem), 1760px);
+  margin: 0 auto 0.9rem;
+}
+
+.home-shell .latest-updates-inner {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.45fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(1.6rem, 3vw, 2.8rem);
+  width: min(calc(100% - 1rem), 1760px);
+  margin: 0 auto;
+  border: 1px solid rgba(0, 61, 69, 0.09);
+  border-radius: 8px;
+  padding: clamp(1.2rem, 2.4vw, 1.8rem);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 22px 70px rgba(0, 61, 69, 0.08);
+}
+
+.home-shell .latest-updates-heading {
+  display: grid;
+  align-content: center;
+  padding: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+.home-shell .latest-updates-label p,
+.home-shell .latest-update-card span {
+  width: fit-content;
+  margin: 0;
+  border-bottom: 2px solid currentColor;
+  color: #008191;
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.home-shell .latest-updates-heading h2 {
+  max-width: 13ch;
+  margin: 0;
+  color: #003d45;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 5.4vw, 5.15rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.home-shell .latest-updates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.home-shell .latest-update-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 23rem;
+  border: 1px solid rgba(0, 61, 69, 0.1);
+  border-radius: 8px;
+  padding: clamp(1.75rem, 2.9vw, 2.25rem);
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(0, 61, 69, 0.08);
+}
+
+.home-shell .latest-update-card.is-featured {
+  background:
+    linear-gradient(135deg, rgba(0, 61, 69, 0.94), rgba(0, 129, 145, 0.84)),
+    url('/images/Englishprograms.jpg') center / cover;
+  color: #f8fffc;
+}
+
+.home-shell .latest-update-card.is-featured span {
+  color: #f4c96d;
+}
+
+.home-shell .latest-update-card h3 {
+  margin: 1.25rem 0 0;
+  color: #003d45;
+  font-size: clamp(1.7rem, 2.6vw, 2.28rem);
+  line-height: 1.08;
+}
+
+.home-shell .latest-update-card.is-featured h3 {
+  color: #f8fffc;
+}
+
+.home-shell .latest-update-card p {
+  margin: 1rem 0 0;
+  color: rgba(0, 29, 36, 0.72);
+  font-size: 1.28rem;
+  line-height: 1.68;
+}
+
+.home-shell .latest-update-card.is-featured p {
+  color: rgba(248, 255, 252, 0.82);
+}
+
+.home-shell .latest-update-card a {
+  align-self: flex-start;
+  width: fit-content;
+  min-height: 3.3rem;
+  margin-top: auto;
+  border-radius: 999px;
+  padding: 0.96rem 1.45rem;
+  background: #003d45;
+  color: #f8fffc;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.home-shell .latest-update-card.is-featured a {
+  background: #fff;
+  color: #003d45;
+}
+
+.home-shell .education-reality-section {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 7rem);
+  width: min(calc(100% - 2rem), 1120px);
+  margin: clamp(4rem, 8vw, 7rem) auto;
+  padding: clamp(2rem, 5vw, 4rem) 0;
+  color: #003d45;
+}
+
+.home-shell .education-reality-stats {
+  display: grid;
+  gap: clamp(1.8rem, 4vw, 3rem);
+}
+
+.home-shell .education-reality-stats article {
+  display: grid;
+  gap: 0.45rem;
+  justify-items: start;
+}
+
+.home-shell .education-reality-stats strong {
+  color: transparent;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4.6rem, 11vw, 9.5rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.82;
+  -webkit-text-stroke: 1px rgba(0, 72, 82, 0.68);
+}
+
+.home-shell .education-reality-stats span {
+  max-width: 18rem;
+  margin-top: 0;
+  color: #003d45;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.14;
+}
+
+.home-shell .education-reality-eyebrow {
+  width: fit-content;
+  margin: 0 0 1.15rem;
+  border-bottom: 2px solid currentColor;
+  color: #008191;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.home-shell .education-reality-copy h2 {
+  max-width: 12.5ch;
+  margin: 0;
+  color: #003d45;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 5.4vw, 5.1rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.home-shell .education-reality-copy p:not(.education-reality-eyebrow) {
+  max-width: 44rem;
+  margin: 1.15rem 0 0;
+  color: rgba(0, 29, 36, 0.78);
+  font-size: 1.02rem;
+  font-weight: 650;
+  line-height: 1.62;
+}
+
+.home-shell .education-reality-copy a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.1rem;
+  margin-top: 1.8rem;
+  border-radius: 999px;
+  padding: 0 1.35rem;
+  background: #003d45;
+  color: #f8fffc;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.home-shell .education-reality-copy a:hover,
+.home-shell .education-reality-copy a:focus-visible {
+  background: #044a42;
+}
+
+.home-shell .course-summary-section {
+  width: 100%;
+  margin-top: clamp(4rem, 8vw, 7rem);
+  padding: 0;
+  background: #034852;
+  color: #f8fffc;
+}
+
+.home-shell .course-summary-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  width: min(calc(100% - 2rem), 1120px);
+  min-height: clamp(10rem, 18vw, 13.5rem);
+  margin-inline: auto;
+  padding: clamp(2rem, 4vw, 3rem) 0;
+}
+
+.home-shell .course-summary-heading p {
+  margin: 0;
+  width: fit-content;
+  border-bottom: 2px solid currentColor;
+  color: #f8fffc;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.home-shell .course-summary-heading h2 {
+  max-width: 11.5ch;
+  margin: 1.15rem 0 0;
+  color: #f8fffc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.45rem, 5vw, 4.4rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.home-shell .course-summary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10.8rem;
+  min-height: 3.2rem;
+  border-radius: 999px;
+  padding: 0 1.5rem;
+  background: #fff;
+  color: #034852;
+  font-size: 1.02rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.home-shell .course-summary-action:hover,
+.home-shell .course-summary-action:focus-visible {
+  background: #f4c96d;
+  color: #062925;
+  transform: translateY(-2px);
+}
+
+.home-shell .course-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 0;
+  width: 100%;
+}
+
+.home-shell .course-summary-card {
+  position: relative;
+  display: block;
+  min-height: clamp(24rem, 34vw, 38rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  color: #f8fffc;
+  text-decoration: none;
+  background: #000;
+}
+
+.home-shell .course-summary-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(6, 41, 37, 0.22) 0%, rgba(6, 41, 37, 0.5) 52%, rgba(6, 41, 37, 0.74) 100%),
+    rgba(45, 36, 24, 0.28);
+  pointer-events: none;
+  transition: background 200ms ease;
+}
+
+.home-shell .course-summary-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.78;
+  transition: opacity 200ms ease, transform 260ms ease;
+  z-index: 0;
+}
+
+.home-shell .course-summary-card:first-child,
+.home-shell .course-summary-card:hover,
+.home-shell .course-summary-card:focus-visible {
+  border-color: rgba(255, 255, 255, 0.92);
+  outline: none;
+}
+
+.home-shell .course-summary-card:hover::before,
+.home-shell .course-summary-card:focus-visible::before {
+  background:
+    linear-gradient(180deg, rgba(6, 41, 37, 0.08) 0%, rgba(6, 41, 37, 0.32) 48%, rgba(6, 41, 37, 0.7) 100%),
+    rgba(45, 36, 24, 0.12);
+}
+
+.home-shell .course-summary-card:hover img,
+.home-shell .course-summary-card:focus-visible img {
+  opacity: 0.96;
+  transform: scale(1.05);
+}
+
+.home-shell .course-summary-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 2vw, 1.7rem);
+  text-align: center;
+}
+
+.home-shell .course-summary-content strong {
+  max-width: 12rem;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 1.6vw, 1.8rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+@media (max-width: 940px) {
+  .about-shell .about-school-section {
+    grid-template-columns: 1fr;
+  }
+
+  .home-shell .hero-action-strip {
+    grid-template-columns: 6rem minmax(18rem, 1fr) minmax(18rem, 1fr);
+  }
+
+  .home-shell .latest-updates-section {
+    padding: clamp(2.5rem, 7vw, 4rem) 1rem;
+  }
+
+  .home-shell .latest-updates-inner {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .home-shell .latest-updates-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home-shell .education-reality-section {
+    grid-template-columns: 1fr;
+  }
+
+  .home-shell .education-reality-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .home-shell .education-reality-stats span {
+    font-size: 1rem;
+  }
+
+  .home-shell .course-summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home-shell .course-summary-header {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .home-shell .course-summary-action {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-shell .hero-action-strip {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    grid-template-columns: 1fr;
+    width: auto;
+  }
+
+  .home-shell .hero-scroll-link {
+    display: none;
+  }
+
+  .home-shell .hero-video-link,
+  .home-shell .hero-action-strip > div {
+    min-height: 5.8rem;
+  }
+
+  .home-shell .latest-updates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-shell .latest-updates-heading {
+    padding: 1.35rem;
+  }
+
+  .home-shell .latest-update-card {
+    min-height: auto;
+    padding: 1.25rem;
+  }
+
+  .home-shell .education-reality-section {
+    margin: clamp(3rem, 10vw, 4.5rem) auto;
+  }
+
+  .home-shell .education-reality-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .home-shell .education-reality-stats strong {
+    font-size: clamp(4.2rem, 22vw, 6.7rem);
+  }
+
+  .home-shell .education-reality-copy h2 {
+    font-size: clamp(2.35rem, 11vw, 3.5rem);
+  }
+
+  .home-shell .course-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-shell .course-summary-card {
+    min-height: 20rem;
+  }
+}

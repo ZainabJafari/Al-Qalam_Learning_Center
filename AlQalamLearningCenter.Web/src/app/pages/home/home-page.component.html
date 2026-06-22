@@ -10,34 +10,120 @@
         {{ 'home.heroText' | t }}
       </p>
 
+      <a class="hero-discover-link" href="#education-reality">{{ 'home.discoverMore' | t }}</a>
+    </div>
 
+    <div class="hero-action-strip" [attr.aria-label]="'home.heroActionsLabel' | t">
+      <a class="hero-scroll-link" href="#education-reality">
+        <span>{{ 'home.scrollDown' | t }}</span>
+      </a>
+
+      <a class="hero-video-link" href="#story" [attr.aria-label]="'home.watchVideoAria' | t">
+        <span>{{ 'home.watchVideo' | t }}</span>
+        <span class="hero-play-icon" aria-hidden="true"></span>
+      </a>
+
+      <div>
+        <p>{{ 'home.heroDonationPrompt' | t }}</p>
+        <a routerLink="/donate">{{ 'home.makeDonation' | t }}</a>
+      </div>
     </div>
   </section>
 
-  <section class="promise-section" id="school">
-    <div class="promise-copy">
-      <p class="eyebrow">{{ 'home.promiseEyebrow' | t }}</p>
-      <h2>{{ 'home.promiseTitle' | t }}</h2>
-      <p>
-        {{ 'home.promiseText' | t }}
-      </p>
+  <section class="latest-updates-section" aria-labelledby="latest-updates-title">
+    <div class="latest-updates-label">
+      <p>{{ 'home.updatesEyebrow' | t }}</p>
     </div>
 
-    <div class="promise-list" [attr.aria-label]="'home.strengthsLabel' | t">
-      <article>
-        <h3>{{ 'home.safeEnvironment' | t }}</h3>
-        <p>{{ 'home.safeEnvironmentText' | t }}</p>
-      </article>
-      <article>
-        <h3>{{ 'home.modernLearning' | t }}</h3>
-        <p>{{ 'home.modernLearningText' | t }}</p>
-      </article>
-      <article>
-        <h3>{{ 'home.hopeFuture' | t }}</h3>
-        <p>{{ 'home.hopeFutureText' | t }}</p>
-      </article>
+    <div class="latest-updates-inner">
+      <div class="latest-updates-heading">
+        <h2 id="latest-updates-title">{{ 'home.updatesTitle' | t }}</h2>
+      </div>
+
+      <div class="latest-updates-grid">
+        <article class="latest-update-card is-featured">
+          <span>{{ 'home.updateDiscountLabel' | t }}</span>
+          <h3>{{ 'home.updateDiscountTitle' | t }}</h3>
+          <p>{{ 'home.updateDiscountText' | t }}</p>
+          <a routerLink="/courses">{{ 'home.updateDiscountCta' | t }}</a>
+        </article>
+
+        <article class="latest-update-card">
+          <span>{{ 'home.updateEventsLabel' | t }}</span>
+          <h3>{{ 'home.updateEventsTitle' | t }}</h3>
+          <p>{{ 'home.updateEventsText' | t }}</p>
+          <a href="#story">{{ 'home.updateEventsCta' | t }}</a>
+        </article>
+
+        <article class="latest-update-card">
+          <span>{{ 'home.updateRegisterLabel' | t }}</span>
+          <h3>{{ 'home.updateRegisterTitle' | t }}</h3>
+          <p>{{ 'home.updateRegisterText' | t }}</p>
+          <a routerLink="/contact">{{ 'home.updateRegisterCta' | t }}</a>
+        </article>
+      </div>
     </div>
   </section>
+
+
+  <section class="course-summary-section" aria-labelledby="course-categories-title">
+    <div class="course-summary-header">
+      <div class="course-summary-heading">
+        <p>{{ 'home.coursesEyebrow' | t }}</p>
+        <h2 id="course-categories-title">{{ 'home.coursesTitle' | t }}</h2>
+      </div>
+
+      <a class="course-summary-action" routerLink="/courses">{{ 'home.discoverCourses' | t }}</a>
+    </div>
+
+    <div class="course-summary-grid">
+      @for (category of courseSummaries; track category.id) {
+        <a
+          class="course-summary-card"
+          routerLink="/courses"
+          [attr.aria-label]="category.title + ', ' + category.courseCount + ' courses'"
+        >
+          <img [src]="category.imageSrc" alt="" />
+
+          <span class="course-summary-content">
+            <strong>{{ category.title }}</strong>
+          </span>
+        </a>
+      }
+    </div>
+  </section>
+
+    <section class="education-reality-section" id="education-reality" aria-labelledby="education-reality-title">
+    <div class="education-reality-stats" [attr.aria-label]="'home.realityStatsLabel' | t">
+      <article>
+        <strong>2.5M</strong>
+        <span>{{ 'home.realityStatOne' | t }}</span>
+      </article>
+      <article>
+        <strong>80%</strong>
+        <span>{{ 'home.realityStatTwo' | t }}</span>
+      </article>
+      <article>
+        <strong>1.4M</strong>
+        <span>{{ 'home.realityStatThree' | t }}</span>
+      </article>
+    </div>
+
+    <div class="education-reality-copy">
+      <p class="education-reality-eyebrow">{{ 'home.realityEyebrow' | t }}</p>
+      <h2 id="education-reality-title">{{ 'home.realityTitle' | t }}</h2>
+      <p>{{ 'home.realityTextOne' | t }}</p>
+      <p>{{ 'home.realityTextTwo' | t }}</p>
+      <a
+        href="https://www.unesco.org/en/articles/afghanistan-14-million-girls-still-banned-school-de-facto-authorities"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ 'home.realitySource' | t }}
+      </a>
+    </div>
+  </section>
+
 
   <section class="rights-section" id="story">
     <div class="rights-photo" role="img" [attr.aria-label]="'home.rightsPhotoLabel' | t"></div>

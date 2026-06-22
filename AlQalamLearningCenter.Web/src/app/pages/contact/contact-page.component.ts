@@ -7,6 +7,7 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
   standalone: true,
   imports: [SiteNavbarComponent, TranslatePipe],
   templateUrl: './contact-page.component.html',
-  styleUrl: './contact-page.component.scss'
+  styleUrls: ['./contact-page.component.scss']
 })
 export class ContactPageComponent {}
+

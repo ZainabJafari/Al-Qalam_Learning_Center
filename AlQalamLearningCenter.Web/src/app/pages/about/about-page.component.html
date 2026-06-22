@@ -17,6 +17,31 @@
     </figure>
   </section>
 
+  <section class="about-school-section" id="school">
+    <div class="about-school-copy">
+      <p class="eyebrow">{{ 'home.promiseEyebrow' | t }}</p>
+      <h2>{{ 'home.promiseTitle' | t }}</h2>
+      <p>
+        {{ 'home.promiseText' | t }}
+      </p>
+    </div>
+
+    <div class="about-school-list" [attr.aria-label]="'home.strengthsLabel' | t">
+      <article>
+        <h3>{{ 'home.safeEnvironment' | t }}</h3>
+        <p>{{ 'home.safeEnvironmentText' | t }}</p>
+      </article>
+      <article>
+        <h3>{{ 'home.modernLearning' | t }}</h3>
+        <p>{{ 'home.modernLearningText' | t }}</p>
+      </article>
+      <article>
+        <h3>{{ 'home.hopeFuture' | t }}</h3>
+        <p>{{ 'home.hopeFutureText' | t }}</p>
+      </article>
+    </div>
+  </section>
+
   <section class="quick-grid" [attr.aria-label]="'about.quickGridLabel' | t">
     <article>
       <span>01</span>

@@ -8,7 +8,7 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
   standalone: true,
   imports: [RouterLink, TranslatePipe],
   templateUrl: './site-navbar.component.html',
-  styleUrl: './site-navbar.component.scss'
+  styleUrls: ['./site-navbar.component.scss']
 })
 export class SiteNavbarComponent {
   constructor(private readonly languageService: LanguageService) {}
@@ -17,3 +17,4 @@ export class SiteNavbarComponent {
     this.languageService.toggleLanguage();
   }
 }
+

@@ -11,7 +11,7 @@ import { CreateDonationRequest, DonationFrequency } from '../../types/donation.m
   standalone: true,
   imports: [FormsModule, TranslatePipe],
   templateUrl: './donation-form.component.html',
-  styleUrl: './donation-form.component.scss'
+  styleUrls: ['./donation-form.component.scss']
 })
 export class DonationFormComponent {
   isDonationLoading = false;
@@ -92,3 +92,4 @@ export class DonationFormComponent {
     return text.length > 0 ? text : null;
   }
 }
+

@@ -1,6 +1,6 @@
 ﻿:host {
   display: block;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -28,8 +28,8 @@
 }
 
 :host(.home-navbar) .brand-logo {
-  width: 9.5rem;
-  height: 3.5rem;
+  width: 10.6rem;
+  height: 5.6rem;
 }
 
 :host(.home-navbar) .nav-links a {
@@ -52,11 +52,10 @@
 
 .brand-logo {
   display: block;
-  width: 10.5rem;
-  height: 3.9rem;
-  object-fit: cover;
-  object-position: center 70%;
-  border-radius: 10px;
+  width: 10.8rem;
+  height: 5.6rem;
+  object-fit: contain;
+  object-position: center;
 }
 
 .nav-links {

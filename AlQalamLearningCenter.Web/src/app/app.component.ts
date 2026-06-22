@@ -8,8 +8,9 @@ import { LanguageService } from './i18n/language.service';
   standalone: true,
   imports: [RouterOutlet, SiteFooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   constructor(private readonly languageService: LanguageService) {}
 }
+
