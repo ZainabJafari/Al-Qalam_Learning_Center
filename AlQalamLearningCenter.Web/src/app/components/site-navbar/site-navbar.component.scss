@@ -21,6 +21,28 @@
   backdrop-filter: blur(18px);
 }
 
+:host(.home-navbar) .site-navbar {
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+:host(.home-navbar) .brand-logo {
+  width: 9.5rem;
+  height: 3.5rem;
+}
+
+:host(.home-navbar) .nav-links a {
+  color: rgba(245, 255, 253, 0.92);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+:host(.home-navbar) .language-toggle,
+:host(.home-navbar) .nav-cta {
+  font-size: 1rem;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;

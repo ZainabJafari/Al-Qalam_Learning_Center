@@ -1,4 +1,4 @@
-<app-site-navbar />
+<app-site-navbar class="home-navbar" />
 
 <main class="home-shell">
   <section class="hero-section" id="mission" [attr.aria-label]="'home.heroAriaLabel' | t">
@@ -10,16 +10,7 @@
         {{ 'home.heroText' | t }}
       </p>
 
-      <div class="hero-actions">
-        <a routerLink="/donate" class="primary-link">{{ 'home.supportStudent' | t }}</a>
-        <a routerLink="/about" class="secondary-link">{{ 'home.aboutSchool' | t }}</a>
-      </div>
 
-      <div class="hero-points" [attr.aria-label]="'home.highlightsLabel' | t">
-        <span>{{ 'home.safeClassroom' | t }}</span>
-        <span>{{ 'home.girlsEducation' | t }}</span>
-        <span>{{ 'home.futureSkills' | t }}</span>
-      </div>
     </div>
   </section>
 
@@ -44,32 +35,6 @@
       <article>
         <h3>{{ 'home.hopeFuture' | t }}</h3>
         <p>{{ 'home.hopeFutureText' | t }}</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="courses-section" id="courses">
-    <div class="section-heading">
-      <p class="eyebrow">{{ 'home.coursesEyebrow' | t }}</p>
-      <h2>{{ 'home.coursesTitle' | t }}</h2>
-    </div>
-
-    <div class="course-grid">
-      <article class="course-card">
-        <h3>{{ 'home.englishTitle' | t }}</h3>
-        <p>{{ 'home.englishText' | t }}</p>
-      </article>
-      <article class="course-card">
-        <h3>{{ 'home.artTitle' | t }}</h3>
-        <p>{{ 'home.artText' | t }}</p>
-      </article>
-      <article class="course-card">
-        <h3>{{ 'home.schoolSubjectsTitle' | t }}</h3>
-        <p>{{ 'home.schoolSubjectsText' | t }}</p>
-      </article>
-      <article class="course-card accent-card">
-        <h3>{{ 'home.practicalSkillsTitle' | t }}</h3>
-        <p>{{ 'home.practicalSkillsText' | t }}</p>
       </article>
     </div>
   </section>
