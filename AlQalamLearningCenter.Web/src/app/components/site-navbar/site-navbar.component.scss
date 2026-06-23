@@ -43,6 +43,42 @@
   font-size: 1rem;
 }
 
+:host(.course-navbar) {
+  top: clamp(0.8rem, 1.8vw, 1.4rem);
+  right: clamp(0.8rem, 1.8vw, 1.4rem);
+  left: clamp(0.8rem, 1.8vw, 1.4rem);
+}
+
+:host(.course-navbar) .site-navbar {
+  min-height: 5rem;
+  border-radius: 0;
+  padding: 0.65rem clamp(1rem, 3vw, 2.2rem);
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+:host(.course-navbar) .nav-links a,
+:host(.course-navbar) .brand {
+  color: rgba(248, 255, 252, 0.94);
+}
+
+:host(.course-navbar) .nav-links a:hover {
+  color: #f4c96d;
+}
+
+:host(.course-navbar) .language-toggle {
+  border-color: rgba(248, 255, 252, 0.28);
+  background: rgba(248, 255, 252, 0.1);
+  color: #f8fffc;
+}
+
+:host(.course-navbar) .nav-cta {
+  background: #f8fffc;
+  color: #003d45;
+  box-shadow: none;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;

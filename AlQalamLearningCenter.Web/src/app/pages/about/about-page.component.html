@@ -1,22 +1,43 @@
-<app-site-navbar />
+<app-site-navbar class="course-navbar" />
 
 <main class="about-shell">
   <section class="about-hero" aria-labelledby="about-title">
     <div class="hero-copy">
       <p class="eyebrow">{{ 'about.heroEyebrow' | t }}</p>
-      <h1 id="about-title">{{ 'about.heroTitle' | t }}</h1>
-      <p>
-        {{ 'about.heroText' | t }}
-      </p>
-      <a routerLink="/donate" class="primary-link">{{ 'about.supportSchool' | t }}</a>
+      <h1 id="about-title">About</h1>
     </div>
-
-    <figure class="hero-image">
-      <img src="/images/all-girls-classroom.png" [alt]="'about.heroImageAlt' | t" />
-      <figcaption>{{ 'about.heroCaption' | t }}</figcaption>
-    </figure>
   </section>
 
+    <section class="classroom-gallery" aria-labelledby="classroom-gallery-title">
+    <div class="gallery-heading">
+      <p class="eyebrow">{{ 'about.galleryEyebrow' | t }}</p>
+      <h2 id="classroom-gallery-title">{{ 'about.galleryTitle' | t }}</h2>
+    </div>
+
+    <div class="gallery-mosaic">
+      <article
+        class="gallery-tile gallery-tile-large gallery-main"
+        [attr.aria-label]="'about.galleryMain' | t"
+      ></article>
+      <article
+        class="gallery-tile gallery-classroom-one"
+        [attr.aria-label]="'about.galleryClassroomOne' | t"
+      ></article>
+      <article
+        class="gallery-tile gallery-classroom-two"
+        [attr.aria-label]="'about.galleryClassroomTwo' | t"
+      ></article>
+      <article
+        class="gallery-tile gallery-classroom-three"
+        [attr.aria-label]="'about.galleryClassroomThree' | t"
+      ></article>
+      <article
+        class="gallery-tile gallery-classroom-four"
+        [attr.aria-label]="'about.galleryClassroomFour' | t"
+      ></article>
+    </div>
+  </section>
+  
   <section class="about-school-section" id="school">
     <div class="about-school-copy">
       <p class="eyebrow">{{ 'home.promiseEyebrow' | t }}</p>
@@ -60,41 +81,26 @@
     </article>
   </section>
 
-  <section class="image-story" [attr.aria-label]="'about.imageStoryLabel' | t">
-    <figure class="story-card story-card-large">
-      <img src="/images/bg.png" [alt]="'about.storyImageOneAlt' | t" />
-      <figcaption>
-        <strong>{{ 'about.storyOneTitle' | t }}</strong>
-        {{ 'about.storyOneText' | t }}
-      </figcaption>
-    </figure>
 
-    <figure class="story-card">
-      <img src="/images/girl-studying.png" [alt]="'about.storyImageTwoAlt' | t" />
-      <figcaption>
-        <strong>{{ 'about.storyTwoTitle' | t }}</strong>
-        {{ 'about.storyTwoText' | t }}
-      </figcaption>
-    </figure>
 
-    <figure class="story-card">
-      <img src="/images/skills-learning.jpg" [alt]="'about.storyImageThreeAlt' | t" />
-      <figcaption>
-        <strong>{{ 'about.storyThreeTitle' | t }}</strong>
-        {{ 'about.storyThreeText' | t }}
-      </figcaption>
-    </figure>
-  </section>
+  <div class="vision-marquee" aria-hidden="true">
+    <span>Vision &amp; Mission</span>
+    <span>*</span>
+  </div>
 
   <section class="vision-mission" [attr.aria-label]="'about.visionMissionLabel' | t">
-    <article>
-      <p class="eyebrow">{{ 'about.vision' | t }}</p>
-      <h2>{{ 'about.visionText' | t }}</h2>
-    </article>
-    <article>
-      <p class="eyebrow">{{ 'about.mission' | t }}</p>
-      <h2>{{ 'about.missionText' | t }}</h2>
-    </article>
+    <div class="vision-heading">
+      <p class="eyebrow">{{ 'about.visionMissionLabel' | t }}</p>
+      <h2>{{ 'about.visionMissionTitle' | t }}</h2>
+      <p>{{ 'about.visionMissionIntro' | t }}</p>
+    </div>
+
+    <div class="vision-copy">
+      <span aria-hidden="true">“</span>
+      <p>{{ 'about.visionText' | t }}</p>
+      <p>{{ 'about.missionText' | t }}</p>
+      <strong>Al Qalam Learning Center</strong>
+    </div>
   </section>
 
   <section class="values-section" aria-labelledby="values-title">

@@ -1,11 +1,11 @@
-<app-site-navbar />
+<app-site-navbar class="course-navbar" />
 
 <main class="courses-shell">
   <section class="courses-hero" aria-labelledby="courses-title">
     <img class="hero-image" [src]="heroImageSrc" [alt]="heroImageAlt" />
 
     <div class="hero-content">
-      <h1 id="courses-title">Our Course</h1>
+      <h1 id="courses-title">{{ 'nav.courses' | t }}</h1>
     </div>
   </section>
 
@@ -46,11 +46,11 @@
   <section class="courses-note" aria-labelledby="courses-note-title">
     <div>
       <p class="eyebrow">Learning with care</p>
-      <h2 id="courses-note-title">Students can grow step by step</h2>
+      <h2 id="courses-note-title">Let's learn together, step by step</h2>
     </div>
     <p>
-      Each category is designed to support confidence, useful knowledge, and a stronger future,
-      whether a student is building basics, preparing for certificates, or learning a practical skill.
+      Online classes and weekly sessions help girls keep learning safely, wherever they are.
     </p>
+    <a routerLink="/contact" class="courses-note-cta">Join Now</a>
   </section>
 </main>

@@ -89,6 +89,181 @@ a[href^='tel:'] {
   margin-top: 0.5rem;
 }
 
+.about-shell .classroom-gallery {
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.about-shell .gallery-heading {
+  display: grid;
+  justify-items: center;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about-shell .gallery-heading h2 {
+  max-width: 16ch;
+  color: #062925;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.about-shell .gallery-mosaic {
+  display: grid;
+  grid-template-columns: 1fr 0.75fr 1fr;
+  grid-template-rows: repeat(2, minmax(180px, 1fr));
+  gap: 0.28rem;
+  min-height: clamp(390px, 46vw, 580px);
+  overflow: hidden;
+  border-radius: 8px;
+  background: #003d45;
+  box-shadow: 0 28px 80px rgba(0, 61, 69, 0.14);
+}
+
+.about-shell .gallery-tile {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: 180px;
+  overflow: hidden;
+  padding: 1rem;
+  background-position: center;
+  background-size: cover;
+}
+
+.about-shell .gallery-tile::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background:
+    linear-gradient(180deg, rgba(0, 29, 36, 0.02), rgba(0, 61, 69, 0.34)),
+    rgba(0, 61, 69, 0.06);
+  transition: background 180ms ease;
+}
+
+.about-shell .gallery-tile:hover::before {
+  background:
+    linear-gradient(180deg, rgba(0, 29, 36, 0), rgba(0, 61, 69, 0.2)),
+    rgba(0, 61, 69, 0.02);
+}
+
+.about-shell .gallery-tile-large {
+  grid-row: span 2;
+}
+
+.about-shell .gallery-main {
+  background-image: url('/images/class.JPG');
+}
+
+.about-shell .gallery-classroom-one {
+  background-image: url('./app/images/classrum1.JPG');
+}
+
+.about-shell .gallery-classroom-two {
+  background-image: url('./app/images/classrum2.JPG');
+}
+
+.about-shell .gallery-classroom-three {
+  background-image: url('./app/images/classrum3.JPG');
+}
+
+.about-shell .gallery-classroom-four {
+  background-image: url('./app/images/classrum4.JPG');
+}
+
+.about-shell .vision-marquee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  min-height: clamp(8rem, 16vw, 14rem);
+  margin-top: clamp(3rem, 7vw, 5rem);
+  overflow: hidden;
+  padding: clamp(2rem, 5vw, 4rem) 1rem;
+  background: #ffffff;
+  color: transparent;
+  font-size: clamp(4rem, 9.5vw, 9.5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px rgba(0, 61, 69, 0.78);
+}
+
+.about-shell .vision-marquee span:last-child {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.82em;
+  font-weight: 400;
+}
+
+.about-shell .vision-mission {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
+  gap: clamp(2rem, 7vw, 6rem);
+  margin-top: 0;
+  padding: clamp(4.5rem, 8vw, 6.5rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2));
+  background:
+    radial-gradient(circle at 82% 26%, rgba(47, 143, 131, 0.16), transparent 26%),
+    #2d4141;
+  color: #f8fffc;
+}
+
+.about-shell .vision-heading h2 {
+  max-width: 14ch;
+  color: #f8fffc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.75rem, 5vw, 4.8rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.about-shell .vision-heading .eyebrow {
+  width: fit-content;
+  border-bottom: 2px solid currentColor;
+  color: #4fb3aa;
+}
+
+.about-shell .vision-heading p:not(.eyebrow) {
+  max-width: 36rem;
+  margin-top: 1.5rem;
+  color: rgba(248, 255, 252, 0.86);
+  font-size: 1.08rem;
+  font-weight: 750;
+  line-height: 1.65;
+}
+
+.about-shell .vision-copy {
+  display: grid;
+  align-content: center;
+}
+
+.about-shell .vision-copy span {
+  height: 3.4rem;
+  color: #f8fffc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 0.8;
+}
+
+.about-shell .vision-copy p {
+  margin-top: 1.1rem;
+  color: rgba(248, 255, 252, 0.88);
+  font-size: clamp(1rem, 1.25vw, 1.14rem);
+  font-weight: 750;
+  line-height: 1.75;
+}
+
+.about-shell .vision-copy strong {
+  margin-top: 1.4rem;
+  color: #f4c96d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
 .home-shell .hero-action-strip {
   position: absolute;
   right: auto;
@@ -194,7 +369,7 @@ a[href^='tel:'] {
 
 .home-shell .latest-updates-inner {
   display: grid;
-  grid-template-columns: minmax(360px, 0.45fr) minmax(0, 1fr);
+  grid-template-columns: minmax(330px, 0.38fr) minmax(0, 1fr);
   align-items: stretch;
   gap: clamp(1.6rem, 3vw, 2.8rem);
   width: min(calc(100% - 1rem), 1760px);
@@ -210,6 +385,7 @@ a[href^='tel:'] {
   display: grid;
   align-content: center;
   padding: clamp(1.2rem, 2.5vw, 2rem);
+  overflow: hidden;
 }
 
 .home-shell .latest-updates-label p,
@@ -226,14 +402,14 @@ a[href^='tel:'] {
 }
 
 .home-shell .latest-updates-heading h2 {
-  max-width: 13ch;
+  max-width: 10ch;
   margin: 0;
   color: #003d45;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3rem, 5.4vw, 5.15rem);
+  font-size: clamp(2.55rem, 4vw, 4.35rem);
   font-style: italic;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.02;
 }
 
 .home-shell .latest-updates-grid {
@@ -245,7 +421,7 @@ a[href^='tel:'] {
 .home-shell .latest-update-card {
   display: flex;
   flex-direction: column;
-  min-height: 23rem;
+  min-height: 27rem;
   border: 1px solid rgba(0, 61, 69, 0.1);
   border-radius: 8px;
   padding: clamp(1.75rem, 2.9vw, 2.25rem);
@@ -267,7 +443,7 @@ a[href^='tel:'] {
 .home-shell .latest-update-card h3 {
   margin: 1.25rem 0 0;
   color: #003d45;
-  font-size: clamp(1.7rem, 2.6vw, 2.28rem);
+  font-size: clamp(1.55rem, 2.1vw, 2rem);
   line-height: 1.08;
 }
 
@@ -278,8 +454,8 @@ a[href^='tel:'] {
 .home-shell .latest-update-card p {
   margin: 1rem 0 0;
   color: rgba(0, 29, 36, 0.72);
-  font-size: 1.28rem;
-  line-height: 1.68;
+  font-size: clamp(1.08rem, 1.15vw, 1.18rem);
+  line-height: 1.62;
 }
 
 .home-shell .latest-update-card.is-featured p {
@@ -462,7 +638,7 @@ a[href^='tel:'] {
 
 .home-shell .course-summary-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0;
   width: 100%;
 }
@@ -541,9 +717,188 @@ a[href^='tel:'] {
   line-height: 1.08;
 }
 
+.home-shell .home-closing-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(2.4rem, 5vw, 4rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2));
+  border-top: 1px solid rgba(0, 61, 69, 0.08);
+  background:
+    radial-gradient(circle at 12% 48%, rgba(244, 201, 109, 0.22), transparent 30%),
+    linear-gradient(135deg, #ffffff 0%, #f8fbfb 56%, #fff8ed 100%);
+  color: #003d45;
+}
+
+.home-shell .home-closing-section .eyebrow {
+  margin-bottom: 0.65rem;
+  color: #b98219;
+}
+
+.home-shell .home-closing-section h2 {
+  max-width: 16ch;
+  color: #003d45;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.home-shell .home-closing-section p:not(.eyebrow) {
+  max-width: 44rem;
+  margin: 1rem 0 0;
+  color: rgba(0, 29, 36, 0.72);
+  font-size: clamp(1rem, 1.3vw, 1.16rem);
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.home-shell .home-closing-section nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.8rem;
+}
+
+.home-shell .home-closing-section a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  border-radius: 999px;
+  padding: 0 1.25rem;
+  background: #f4c96d;
+  color: #003d45;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.home-shell .home-closing-section a:last-child {
+  border: 1px solid rgba(0, 61, 69, 0.18);
+  background: transparent;
+  color: #003d45;
+}
+
+.courses-shell .courses-note {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "heading cta"
+    "copy cta";
+  gap: clamp(1rem, 2vw, 1.6rem) clamp(2rem, 9vw, 8rem);
+  align-items: center;
+  width: 100%;
+  min-height: clamp(230px, 23vw, 310px);
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  padding: clamp(3rem, 5vw, 4.6rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2));
+  background:
+    linear-gradient(90deg, rgba(0, 106, 112, 0.83) 0%, rgba(0, 137, 147, 0.8) 52%, rgba(0, 96, 104, 0.84) 100%),
+    radial-gradient(circle at 74% 48%, rgba(255, 255, 255, 0.12), transparent 28%),
+    url('./app/images/chair.jpg') center / cover;
+  color: #f5fffd;
+}
+
+.courses-shell .courses-note > div {
+  grid-area: heading;
+  align-self: end;
+}
+
+.courses-shell .courses-note .eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 0.9rem;
+  border-radius: 999px;
+  padding: 0.5rem 0.85rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #b8e1dd;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.courses-shell .courses-note h2 {
+  max-width: 30ch;
+  color: #f8fffc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.7rem, 4.2vw, 4.7rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.courses-shell .courses-note > p {
+  grid-area: copy;
+  align-self: start;
+  max-width: 48rem;
+  color: rgba(245, 255, 253, 0.9);
+  font-size: clamp(1rem, 1.3vw, 1.18rem);
+  font-weight: 750;
+  line-height: 1.7;
+}
+
+.courses-shell .courses-note-cta {
+  grid-area: cta;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(9rem, 14vw, 13rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.courses-shell .courses-note-cta:hover,
+.courses-shell .courses-note-cta:focus-visible {
+  background: rgba(255, 255, 255, 0.95);
+  color: #003d45;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1180px) {
+  .home-shell .course-summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .courses-shell .courses-note {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "copy"
+      "cta";
+  }
+
+  .courses-shell .courses-note-cta {
+    width: 8.5rem;
+  }
+}
+
 @media (max-width: 940px) {
   .about-shell .about-school-section {
     grid-template-columns: 1fr;
+  }
+
+  .about-shell .vision-mission {
+    grid-template-columns: 1fr;
+  }
+
+  .about-shell .gallery-mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+
+  .about-shell .gallery-tile-large {
+    grid-row: span 1;
   }
 
   .home-shell .hero-action-strip {
@@ -587,6 +942,14 @@ a[href^='tel:'] {
 
   .home-shell .course-summary-action {
     justify-self: start;
+  }
+
+  .home-shell .home-closing-section {
+    grid-template-columns: 1fr;
+  }
+
+  .home-shell .home-closing-section nav {
+    justify-content: flex-start;
   }
 }
 
@@ -643,5 +1006,19 @@ a[href^='tel:'] {
 
   .home-shell .course-summary-card {
     min-height: 20rem;
+  }
+
+  .about-shell .gallery-mosaic {
+    grid-template-columns: 1fr;
+  }
+
+  .about-shell .vision-marquee {
+    justify-content: flex-start;
+    font-size: clamp(3.6rem, 18vw, 5.6rem);
+  }
+
+  .home-shell .home-closing-section nav,
+  .home-shell .home-closing-section a {
+    width: 100%;
   }
 }

@@ -5,7 +5,7 @@
   --hero-dark: #003f49;
   --hero-deep: #001d24;
   width: 100%;
-  padding-bottom: 5rem;
+  padding-bottom: 0;
 }
 
 .hero-section {
@@ -23,16 +23,9 @@
 }
 
 .hero-content {
-  width: min(100%, 570px);
+  width: min(100%, 640px);
   margin-right: auto;
   color: #f8fffc;
-}
-
-.rights-section {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 0.92fr);
-  align-items: center;
-  gap: clamp(2rem, 5vw, 5rem);
 }
 
 .eyebrow {
@@ -57,7 +50,7 @@ h1 {
   max-width: 11ch;
   color: #f8fffc;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(4.2rem, 8vw, 7rem);
+  font-size: clamp(3rem, 7vw, 6.3rem);
   font-style: italic;
   font-weight: 400;
   line-height: 0.98;
@@ -71,11 +64,6 @@ h2 {
 h3 {
   margin: 0.65rem 0 0.45rem;
   font-size: 1.45rem;
-}
-
-.rights-copy p {
-  color: rgba(6, 41, 37, 0.74);
-  line-height: 1.72;
 }
 
 .hero-text {
@@ -147,66 +135,72 @@ h3 {
 }
 
 .rights-section {
-  width: min(calc(100% - 2rem), 1180px);
-  margin-inline: auto;
-  margin-top: clamp(4rem, 8vw, 7rem);
-}
-
-.rights-copy p {
-  margin: 1rem 0 0;
-  font-size: 1.06rem;
-}
-
-.rights-section {
-  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1fr);
-  align-items: stretch;
+  position: relative;
+  display: grid;
+  align-items: center;
   width: 100%;
-  margin-top: 0;
-  padding: clamp(4rem, 8vw, 7rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2));
-  background: linear-gradient(180deg, #f7fffd 0%, #ffffff 100%);
-  color: var(--first);
-}
-
-.rights-photo {
-  min-height: clamp(360px, 44vw, 560px);
-  border-radius: 8px;
+  min-height: clamp(340px, 38vw, 490px);
+  margin: clamp(4rem, 8vw, 7rem) 0 0;
+  overflow: hidden;
+  padding: clamp(2.4rem, 5vw, 4.5rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2));
   background:
-    linear-gradient(180deg, rgba(0, 61, 69, 0.04), rgba(0, 61, 69, 0.34)),
-    url('/images/education-rights.jpg') center / cover;
-  box-shadow: 0 30px 80px rgba(0, 29, 36, 0.35);
+    linear-gradient(90deg, rgba(0, 29, 36, 0.9) 0%, rgba(0, 61, 69, 0.72) 42%, rgba(0, 29, 36, 0.24) 100%),
+    radial-gradient(circle at 16% 42%, rgba(0, 129, 145, 0.24), transparent 34%),
+    url('../../images/AllGirls.png') center / cover;
+  box-shadow: none;
 }
 
 .rights-copy {
   display: grid;
   align-content: center;
   justify-items: start;
+  max-width: 610px;
+  color: #f8fffc;
 }
 
 .rights-copy .eyebrow {
-  color: var(--third);
+  margin-bottom: 0.65rem;
+  color: #f4c96d;
+  font-size: 0.84rem;
+  letter-spacing: 0.13em;
 }
 
 .rights-copy h2 {
-  max-width: 11.5ch;
-  color: var(--first);
+  max-width: 12.5ch;
+  color: #f8fffc;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.7rem, 5.2vw, 5rem);
+  font-size: clamp(2.55rem, 4.9vw, 4.7rem);
   font-style: italic;
   font-weight: 400;
   line-height: 0.98;
 }
 
 .rights-copy p {
-  max-width: 42rem;
-  color: rgba(6, 41, 37, 0.72);
-  font-weight: 650;
+  max-width: 40rem;
+  margin: 1rem 0 0;
+  color: rgba(248, 255, 252, 0.88);
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  font-weight: 750;
+  line-height: 1.62;
+}
+
+.rights-source {
+  margin-top: 1rem;
+  color: rgba(248, 255, 252, 0.76);
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
 }
 
 .rights-copy .primary-link {
-  margin-top: 1.4rem;
-  background: var(--second);
-  color: #f8fffc;
-  box-shadow: 0 18px 38px rgba(4, 74, 66, 0.18);
+  margin-top: 1.55rem;
+  min-height: 2.55rem;
+  padding: 0 1.1rem;
+  background: #f4c96d;
+  color: #003d45;
+  font-size: 0.9rem;
+  box-shadow: 0 18px 38px rgba(0, 29, 36, 0.25);
 }
 
 @media (max-width: 940px) {
@@ -216,7 +210,6 @@ h3 {
   }
 
   .rights-section {
-    grid-template-columns: 1fr;
     min-height: auto;
   }
 

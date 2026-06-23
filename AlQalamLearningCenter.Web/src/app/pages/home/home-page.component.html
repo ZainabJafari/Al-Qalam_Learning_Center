@@ -126,8 +126,6 @@
 
 
   <section class="rights-section" id="story">
-    <div class="rights-photo" role="img" [attr.aria-label]="'home.rightsPhotoLabel' | t"></div>
-
     <div class="rights-copy">
       <p class="eyebrow">{{ 'home.whyMatters' | t }}</p>
       <h2>{{ 'home.rightsTitle' | t }}</h2>
@@ -137,7 +135,28 @@
       <p>
         {{ 'home.rightsTextTwo' | t }}
       </p>
+      <a
+        class="rights-source"
+        href="https://www.unesco.org/en/articles/afghanistan-14-million-girls-still-banned-school-de-facto-authorities"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ 'home.rightsSource' | t }}
+      </a>
       <a routerLink="/donate" class="primary-link">{{ 'home.helpGirl' | t }}</a>
     </div>
+  </section>
+
+  <section class="home-closing-section" aria-labelledby="home-closing-title">
+    <div>
+      <p class="eyebrow">{{ 'home.closingEyebrow' | t }}</p>
+      <h2 id="home-closing-title">{{ 'home.closingTitle' | t }}</h2>
+      <p>{{ 'home.closingText' | t }}</p>
+    </div>
+
+    <nav aria-label="Final home actions">
+      <a routerLink="/donate">{{ 'home.closingDonate' | t }}</a>
+      <a routerLink="/contact">{{ 'home.closingContact' | t }}</a>
+    </nav>
   </section>
 </main>

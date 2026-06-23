@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import { SiteNavbarComponent } from '../../components/site-navbar/site-navbar.component';
 import { courseCategories } from '../../data/course-categories';
+import { TranslatePipe } from '../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-courses-page',
   standalone: true,
-  imports: [SiteNavbarComponent],
+  imports: [SiteNavbarComponent, TranslatePipe],
   templateUrl: './courses-page.component.html',
   styleUrls: ['./courses-page.component.scss']
 })
 export class CoursesPageComponent {
-  readonly heroImageSrc = '/images/class.JPG';
-  readonly heroImageAlt = 'Students in a classroom';
+  readonly heroImageSrc = '/images/firstAid.jpg';
+  readonly heroImageAlt = 'First aid kit and medical tools';
 
   readonly categories = courseCategories;
 
@@ -20,4 +21,3 @@ export class CoursesPageComponent {
     0
   );
 }
-
