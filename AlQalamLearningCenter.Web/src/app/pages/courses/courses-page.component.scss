@@ -126,16 +126,6 @@ h1 {
   background: linear-gradient(180deg, var(--accent), rgba(0, 61, 69, 0.78));
 }
 
-.program-image::after {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  content: '';
-  background:
-    linear-gradient(180deg, rgba(0, 29, 36, 0.03) 0%, rgba(0, 29, 36, 0.08) 42%, rgba(0, 29, 36, 0.78) 100%),
-    linear-gradient(90deg, rgba(0, 61, 69, 0.18), transparent 42%);
-}
-
 .program-image-content {
   position: absolute;
   right: 1rem;

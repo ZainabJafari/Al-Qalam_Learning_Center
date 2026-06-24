@@ -1,19 +1,19 @@
-<app-site-navbar />
+<app-site-navbar class="course-navbar" />
 
 <main class="contact-shell">
   <section class="contact-hero" aria-labelledby="hero-title">
-    <p>{{ 'contact.heroEyebrow' | t }}</p>
-    <h1 id="hero-title">{{ 'contact.heroTitle' | t }}</h1>
-    <span>
-      {{ 'contact.heroText' | t }}
-    </span>
+    <div class="hero-copy">
+      <p class="eyebrow">{{ 'contact.heroEyebrow' | t }}</p>
+      <h1 id="hero-title">{{ 'nav.contact' | t }}</h1>
+      <!-- <span>{{ 'contact.heroText' | t }}</span> -->
+    </div>
   </section>
 
   <section class="contact-heading" aria-labelledby="contact-title">
     <p class="eyebrow">{{ 'contact.headingEyebrow' | t }}</p>
-    <h1 id="contact-title">
+    <h2 id="contact-title">
       {{ 'contact.headingTitleStart' | t }} <span>{{ 'contact.headingTitleHighlight' | t }}</span>
-    </h1>
+    </h2>
     <p>
       {{ 'contact.headingText' | t }}
     </p>
@@ -39,10 +39,10 @@
         </svg>
       </div>
       <h2>{{ 'contact.phone' | t }}</h2>
-      <p><a href="tel:+46701234567">+46 70 123 45 67</a></p>
-      <p>{{ 'contact.whatsapp' | t }}: +46 70 123 45 67</p>
+      <p><a href="tel:+46701234567">0093 784961206</a></p>
+      <p>{{ 'contact.whatsapp' | t }}: 0093 784961206</p>
     </article>
-
+ 
     <article class="contact-card">
       <div class="icon-badge" aria-hidden="true">
         <svg viewBox="0 0 24 24">
@@ -68,9 +68,11 @@
   </section>
 
   <section class="follow-section" aria-labelledby="follow-title">
-    <p class="eyebrow">{{ 'contact.followEyebrow' | t }}</p>
-    <h2 id="follow-title">{{ 'contact.followTitle' | t }}</h2>
-    <p>{{ 'contact.followText' | t }}</p>
+    <div>
+      <p class="eyebrow">{{ 'contact.followEyebrow' | t }}</p>
+      <h2 id="follow-title">{{ 'contact.followTitle' | t }}</h2>
+      <p>{{ 'contact.followText' | t }}</p>
+    </div>
 
     <div class="social-links" [attr.aria-label]="'contact.socialLabel' | t">
       <a href="#" aria-label="Instagram" class="instagram">

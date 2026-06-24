@@ -1,24 +1,46 @@
-<app-site-navbar />
+<app-site-navbar class="course-navbar" />
 
 <main class="donate-shell">
-  <section class="donate-hero">
+  <section class="donate-hero" aria-labelledby="donate-title">
     <div class="donate-copy">
       <p class="eyebrow">{{ 'donate.eyebrow' | t }}</p>
-      <h1>{{ 'donate.title' | t }}</h1>
-      <p>
-        {{ 'donate.text' | t }}
-      </p>
+      <h1 id="donate-title">{{ 'donate.title' | t }}</h1>
+  
+    </div>
+  </section>
+
+  <section class="donation-section" aria-labelledby="donation-form-title">
+    <div class="donation-section-heading">
+      <p class="eyebrow">{{ 'donate.secureDonation' | t }}</p>
+      <h2 id="donation-form-title">{{ 'donate.chooseSupport' | t }}</h2>
+      <p>{{ 'donate.stripeText' | t }}</p>
     </div>
 
-    <aside class="donation-card" [attr.aria-label]="'donate.formLabel' | t">
-      <div class="donation-card-header">
-        <span>{{ 'donate.secureDonation' | t }}</span>
-        sss
-        <h2>{{ 'donate.chooseSupport' | t }}</h2>
-        <p>{{ 'donate.stripeText' | t }}</p>
-      </div>
+    <div class="donation-layout">
+      <aside class="donation-card" [attr.aria-label]="'donate.formLabel' | t">
+        <app-donation-form />
+      </aside>
 
-      <app-donation-form />
-    </aside>
+      <aside class="donation-impact">
+        <p class="impact-eyebrow">{{ 'home.closingEyebrow' | t }}</p>
+        <h3>{{ 'home.closingTitle' | t }}</h3>
+        <p>{{ 'home.closingText' | t }}</p>
+
+        <ul>
+          <li>
+            <strong>{{ 'about.openAccessTitle' | t }}</strong>
+            <span>{{ 'about.openAccessText' | t }}</span>
+          </li>
+          <li>
+            <strong>{{ 'about.supportNeedsTitle' | t }}</strong>
+            <span>{{ 'about.supportNeedsText' | t }}</span>
+          </li>
+          <li>
+            <strong>{{ 'about.careerPathTitle' | t }}</strong>
+            <span>{{ 'about.careerPathText' | t }}</span>
+          </li>
+        </ul>
+      </aside>
+    </div>
   </section>
 </main>

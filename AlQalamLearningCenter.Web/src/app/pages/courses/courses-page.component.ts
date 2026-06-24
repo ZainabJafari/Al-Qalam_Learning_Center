@@ -11,8 +11,8 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
   styleUrls: ['./courses-page.component.scss']
 })
 export class CoursesPageComponent {
-  readonly heroImageSrc = '/images/firstAid.jpg';
-  readonly heroImageAlt = 'First aid kit and medical tools';
+  readonly heroImageSrc = '/images/alisa.jpg';
+  readonly heroImageAlt = 'Students learning together in a classroom';
 
   readonly categories = courseCategories;
 
