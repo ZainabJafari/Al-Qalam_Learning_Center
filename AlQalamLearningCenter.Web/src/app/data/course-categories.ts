@@ -48,7 +48,7 @@ export const courseCategories: readonly CourseCategory[] = [
     title: 'Arts & Creativity',
     label: 'Creative Expression',
     intro: 'Hands-on creative classes where students build patience, imagination, practical making skills, and pride in their work.',
-    imageSrc: '/images/skills-learning.jpg',
+    imageSrc: '/images/swing.JPG',
     imageAlt: 'Student learning practical and creative skills',
     courses: [
       'Painting',
@@ -100,4 +100,3 @@ export const courseCategories: readonly CourseCategory[] = [
     ]
   }
 ];
-

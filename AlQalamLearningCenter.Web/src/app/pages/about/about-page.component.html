@@ -8,90 +8,76 @@
     </div>
   </section>
 
-    <section class="classroom-gallery" aria-labelledby="classroom-gallery-title">
-    <div class="gallery-heading">
+  <section class="about-school-gallery" aria-labelledby="school-gallery-title">
+    <div class="school-gallery-heading">
       <p class="eyebrow">{{ 'about.galleryEyebrow' | t }}</p>
-      <h2 id="classroom-gallery-title">{{ 'about.galleryTitle' | t }}</h2>
+      <h2 id="school-gallery-title">{{ 'about.galleryTitle' | t }}</h2>
     </div>
 
-    <div class="gallery-mosaic">
-      <article
-        class="gallery-tile gallery-tile-large gallery-main"
-        [attr.aria-label]="'about.galleryMain' | t"
-      ></article>
-      <article
-        class="gallery-tile gallery-classroom-one"
-        [attr.aria-label]="'about.galleryClassroomOne' | t"
-      ></article>
-      <article
-        class="gallery-tile gallery-classroom-two"
-        [attr.aria-label]="'about.galleryClassroomTwo' | t"
-      ></article>
-      <article
-        class="gallery-tile gallery-classroom-three"
-        [attr.aria-label]="'about.galleryClassroomThree' | t"
-      ></article>
-      <article
-        class="gallery-tile gallery-classroom-four"
-        [attr.aria-label]="'about.galleryClassroomFour' | t"
-      ></article>
+    <div class="school-gallery-grid">
+      <figure class="school-gallery-tile school-gallery-feature">
+        <img
+          src="/images/two.JPG"
+          alt="Students during a lesson at Al-Qalam Learning Center"
+        />
+        <figcaption>Learning together</figcaption>
+      </figure>
+
+      <figure class="school-gallery-tile">
+        <img
+          src="/images/seven.JPG"
+          loading="lazy"
+          alt="Students studying inside an Al-Qalam classroom"
+        />
+        <figcaption>Learning in class</figcaption>
+      </figure>
+
+      <figure class="school-gallery-tile">
+        <img
+          src="/images/three.png"
+          loading="lazy"
+          alt="Students taking part in school activities"
+        />
+        <figcaption>Moments at Al-Qalam</figcaption>
+      </figure>
+
+      <figure class="school-gallery-tile">
+        <img
+          src="/images/four.JPG"
+          loading="lazy"
+          alt="Girls learning together at Al-Qalam"
+        />
+        <figcaption>Daily lessons</figcaption>
+      </figure>
+
+      <figure class="school-gallery-tile">
+        <img
+          src="/images/five.JPG"
+          loading="lazy"
+          alt="Students working in a classroom"
+        />
+        <figcaption>Confidence in class</figcaption>
+      </figure>
+
+      <figure class="school-gallery-tile">
+        <img
+          src="/images/six.JPG"
+          loading="lazy"
+          alt="A school lesson at Al-Qalam Learning Center"
+        />
+        <figcaption>In the classroom</figcaption>
+      </figure>
+
+      <figure class="school-gallery-tile">
+        <img
+          src="/images/one.JPG"
+          loading="lazy"
+          alt="Students and learning materials at Al-Qalam"
+        />
+        <figcaption>Skills for the future</figcaption>
+      </figure>
     </div>
   </section>
-  
-  <section class="about-school-section" id="school">
-    <div class="about-school-panel">
-      <div class="about-school-copy">
-        <p class="eyebrow">{{ 'about.purposeEyebrow' | t }}</p>
-        <h2>{{ 'about.purposeTitle' | t }}</h2>
-        <p>
-          {{ 'about.purposeText' | t }}
-        </p>
-      </div>
-
-      <div class="about-school-list" [attr.aria-label]="'about.purposeListLabel' | t">
-        <article>
-          <h3>{{ 'about.workSkillsTitle' | t }}</h3>
-          <p>{{ 'about.workSkillsText' | t }}</p>
-        </article>
-        <article>
-          <h3>{{ 'about.openAccessTitle' | t }}</h3>
-          <p>{{ 'about.openAccessText' | t }}</p>
-        </article>
-        <article>
-          <h3>{{ 'about.supportNeedsTitle' | t }}</h3>
-          <p>{{ 'about.supportNeedsText' | t }}</p>
-        </article>
-        <article>
-          <h3>{{ 'about.careerPathTitle' | t }}</h3>
-          <p>{{ 'about.careerPathText' | t }}</p>
-        </article>
-      </div>
-    </div>
-
-    <figure class="about-school-visual">
-      <img src="/images/education.png" [alt]="'about.educationImageAlt' | t" />
-    </figure>
-  </section>
-
-  <section class="quick-grid" [attr.aria-label]="'about.quickGridLabel' | t">
-    <article>
-      <span>01</span>
-      <h2>{{ 'about.safeLearning' | t }}</h2>
-      <p>{{ 'about.safeLearningText' | t }}</p>
-    </article>
-    <article>
-      <span>02</span>
-      <h2>{{ 'about.usefulSkills' | t }}</h2>
-      <p>{{ 'about.usefulSkillsText' | t }}</p>
-    </article>
-    <article>
-      <span>03</span>
-      <h2>{{ 'about.futureBelief' | t }}</h2>
-      <p>{{ 'about.futureBeliefText' | t }}</p>
-    </article>
-  </section>
-
-
 
   <div class="vision-marquee" aria-hidden="true">
     <span>Vision &amp; Mission</span>
@@ -99,40 +85,106 @@
   </div>
 
   <section class="vision-mission" [attr.aria-label]="'about.visionMissionLabel' | t">
-    <div class="vision-heading">
-      <p class="eyebrow">{{ 'about.visionMissionLabel' | t }}</p>
-      <h2>{{ 'about.visionMissionTitle' | t }}</h2>
-      <p>{{ 'about.visionMissionIntro' | t }}</p>
-    </div>
-
-    <div class="vision-copy">
-      <span aria-hidden="true">“</span>
+    <article class="vision-statement vision-statement-left">
+      <span class="vision-mark" aria-hidden="true">01</span>
+      <h2>{{ 'about.vision' | t }}</h2>
       <p>{{ 'about.visionText' | t }}</p>
+    </article>
+
+    <article class="vision-statement vision-statement-right">
+      <span class="vision-mark" aria-hidden="true">02</span>
+      <h2>{{ 'about.mission' | t }}</h2>
       <p>{{ 'about.missionText' | t }}</p>
       <strong>Al Qalam Learning Center</strong>
-    </div>
+    </article>
   </section>
 
-  <section class="values-section" aria-labelledby="values-title">
-    <div class="section-heading">
-      <p class="eyebrow">{{ 'about.valuesEyebrow' | t }}</p>
-      <h2 id="values-title">{{ 'about.valuesTitle' | t }}</h2>
-    </div>
+  <section class="about-modern-story" id="school" aria-labelledby="about-story-title">
+    <article class="about-story-simple-card">
+      <p class="about-story-label">
+        <span aria-hidden="true"></span>
+        {{ 'about.storyEyebrow' | t }}
+      </p>
 
-    <div class="values-grid">
-      <article>
-        <h3>{{ 'about.rightToEducation' | t }}</h3>
-        <p>{{ 'about.rightToEducationText' | t }}</p>
-      </article>
-      <article>
-        <h3>{{ 'about.equalWorth' | t }}</h3>
-        <p>{{ 'about.equalWorthText' | t }}</p>
-      </article>
-      <article>
-        <h3>{{ 'about.futureIndependence' | t }}</h3>
-        <p>{{ 'about.futureIndependenceText' | t }}</p>
-      </article>
-    </div>
+      <h2 id="about-story-title">
+        A story of <em>hope.</em>
+      </h2>
+
+      <div class="about-story-article">
+        <p>
+          {{ 'about.storyIntroStart' | t }}
+          <strong>{{ 'about.storyBelief' | t }}</strong>
+        </p>
+        <p>{{ 'about.storyContext' | t }}</p>
+        <p>
+          {{ 'about.storyFoundersStart' | t }}
+          <strong>Zainab Jafari and Zahra Hoseini</strong>
+          {{ 'about.storyFoundersMiddle' | t }}
+          <strong>Alamtab Rasooly</strong>
+          {{ 'about.storyFoundersEnd' | t }}
+        </p>
+        <p>
+          {{ 'about.storyFreeStart' | t }}
+          <strong>{{ 'about.storyFreeHighlight' | t }}</strong>,
+          {{ 'about.storyFreeEnd' | t }}
+        </p>
+        <p>{{ 'about.storyMoreThanSchool' | t }}</p>
+      </div>
+
+      <footer class="about-story-simple-footer">
+        <span>2026</span>
+        <strong>{{ 'about.storyClosing' | t }}</strong>
+      </footer>
+    </article>
+
+    <section class="founders-showcase" aria-labelledby="founders-title">
+      <div class="founders-heading">
+        <p class="founders-eyebrow">Our People</p>
+        <h2 id="founders-title">Meet the People Behind Al-Qalam</h2>
+        <p>
+          Al-Qalam was founded by three Afghan women brought together by a shared belief in education
+          and in the potential of every girl.
+        </p>
+        <p>
+          Behind the center is a personal commitment to creating something meaningful and lasting.
+          We work closely, support one another and carry a shared responsibility for the decisions,
+          challenges and hopes that come with building Al-Qalam.
+        </p>
+        <p>
+          For us, this work is deeply personal. Every student who walks through Al-Qalam's doors is a
+          reminder of why we began and why we remain committed to giving this work the care, dedication
+          and responsibility it deserves.
+        </p>
+      </div>
+
+      <p class="founding-members-label">Founding Members</p>
+
+      <div class="founders-grid">
+        <article class="founder-card">
+          <img src="/images/me.jpg" loading="lazy" alt="Portrait of Zainab Jafari" />
+          <div>
+            <h3>Zainab Jafari</h3>
+            <p>Founder &amp; Project Coordinator</p>
+          </div>
+        </article>
+
+        <article class="founder-card">
+          <img src="/images/me.jpg" loading="lazy" alt="Portrait of Zahra Hoseini" />
+          <div>
+            <h3>Zahra Hoseini</h3>
+            <p>Founder &amp; Project Coordinator</p>
+          </div>
+        </article>
+
+        <article class="founder-card">
+          <img src="/images/me.jpg" loading="lazy" alt="Portrait of Alamtab Rasooly" />
+          <div>
+            <h3>Alamtab Rasooly</h3>
+            <p>Founder &amp; Local Coordinator</p>
+          </div>
+        </article>
+      </div>
+    </section>
   </section>
 
   <section class="support-section" aria-labelledby="support-title">

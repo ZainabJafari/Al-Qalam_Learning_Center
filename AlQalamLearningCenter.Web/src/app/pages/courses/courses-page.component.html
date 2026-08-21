@@ -19,20 +19,17 @@
       >
         <div class="program-image">
           <img [src]="category.imageSrc" [alt]="category.imageAlt" />
-
-          <div class="program-image-content" aria-hidden="true">
-            <span>{{ category.number }}</span>
-            <strong>{{ category.title }}</strong>
-            <small>{{ category.courses.length }} courses</small>
-          </div>
         </div>
 
         <div class="program-copy">
-          <span class="program-label">{{ category.label }}</span>
+          <div class="program-meta">
+            <span class="program-label">{{ category.label }}</span>
+            <span>{{ category.courses.length }} courses</span>
+          </div>
 
           <h2 [id]="category.id + '-title'">{{ category.title }}</h2>
 
-          <p>{{ category.intro }}</p>
+          <p class="program-intro">{{ category.intro }}</p>
 
           <ul class="course-list" [attr.aria-label]="category.title + ' courses'">
             @for (course of category.courses; track course) {

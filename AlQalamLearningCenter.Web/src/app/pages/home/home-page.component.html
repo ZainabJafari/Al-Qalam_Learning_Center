@@ -10,7 +10,7 @@
         {{ 'home.heroText' | t }}
       </p> -->
 
-      <a class="hero-discover-link" href="#education-reality">{{ 'home.discoverMore' | t }}</a>
+      
     </div>
 
     <div class="hero-action-strip" [attr.aria-label]="'home.heroActionsLabel' | t">
@@ -42,6 +42,13 @@
 
       <div class="latest-updates-grid">
         <article class="latest-update-card is-featured">
+          <span>{{ 'home.updateEventsLabel' | t }}</span>
+          <h3>{{ 'home.updateEventsTitle' | t }}</h3>
+          <p>{{ 'home.updateEventsText' | t }}</p>
+          <a href="/contact">{{ 'home.updateEventsCta' | t }}</a>
+        </article>
+
+        <article class="latest-update-card">
           <span>{{ 'home.updateDiscountLabel' | t }}</span>
           <h3>{{ 'home.updateDiscountTitle' | t }}</h3>
           <p>{{ 'home.updateDiscountText' | t }}</p>
@@ -49,17 +56,9 @@
         </article>
 
         <article class="latest-update-card">
-          <span>{{ 'home.updateEventsLabel' | t }}</span>
-          <h3>{{ 'home.updateEventsTitle' | t }}</h3>
-          <p>{{ 'home.updateEventsText' | t }}</p>
-          <a href="#story">{{ 'home.updateEventsCta' | t }}</a>
-        </article>
-
-        <article class="latest-update-card">
           <span>{{ 'home.updateRegisterLabel' | t }}</span>
           <h3>{{ 'home.updateRegisterTitle' | t }}</h3>
           <p>{{ 'home.updateRegisterText' | t }}</p>
-          <a routerLink="/contact">{{ 'home.updateRegisterCta' | t }}</a>
         </article>
       </div>
     </div>
@@ -125,25 +124,20 @@
   </section>
 
 
-  <section class="rights-section" id="story">
-    <div class="rights-copy">
-      <p class="eyebrow">{{ 'home.whyMatters' | t }}</p>
-      <h2>{{ 'home.rightsTitle' | t }}</h2>
-      <p>
-        {{ 'home.rightsTextOne' | t }}
-      </p>
-      <p>
-        {{ 'home.rightsTextTwo' | t }}
-      </p>
-      <a
-        class="rights-source"
-        href="https://www.unesco.org/en/articles/afghanistan-14-million-girls-still-banned-school-de-facto-authorities"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {{ 'home.rightsSource' | t }}
-      </a>
-      <a routerLink="/donate" class="primary-link">{{ 'home.helpGirl' | t }}</a>
+  <section class="home-vision-mission" id="story" [attr.aria-label]="'about.visionMissionLabel' | t">
+    <div class="home-vision-grid">
+      <article class="home-vision-card">
+        <span class="home-vision-mark" aria-hidden="true">01</span>
+        <h2>{{ 'about.vision' | t }}</h2>
+        <p>{{ 'about.visionText' | t }}</p>
+      </article>
+
+      <article class="home-vision-card home-vision-card-mission">
+        <span class="home-vision-mark" aria-hidden="true">02</span>
+        <h2>{{ 'about.mission' | t }}</h2>
+        <p>{{ 'about.missionText' | t }}</p>
+        <strong>Al Qalam Learning Center</strong>
+      </article>
     </div>
   </section>
 
