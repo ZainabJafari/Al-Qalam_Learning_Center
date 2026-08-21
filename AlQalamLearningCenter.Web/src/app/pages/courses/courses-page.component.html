@@ -2,7 +2,7 @@
 
 <main class="courses-shell">
   <section class="courses-hero" aria-labelledby="courses-title">
-    <img class="hero-image" [src]="heroImageSrc" [alt]="heroImageAlt" />
+    <img class="hero-image" [src]="heroImageSrc" [alt]="'courses.heroImageAlt' | t" />
 
     <div class="hero-content">
       <p class="hero-eyebrow">{{ 'courses.heroEyebrow' | t }}</p>
@@ -18,22 +18,22 @@
         [attr.aria-labelledby]="category.id + '-title'"
       >
         <div class="program-image">
-          <img [src]="category.imageSrc" [alt]="category.imageAlt" />
+          <img [src]="category.imageSrc" [alt]="category.imageAltKey | t" />
         </div>
 
         <div class="program-copy">
           <div class="program-meta">
-            <span class="program-label">{{ category.label }}</span>
-            <span>{{ category.courses.length }} courses</span>
+            <span class="program-label">{{ category.labelKey | t }}</span>
+            <span>{{ category.courses.length }} {{ 'courses.courseCountLabel' | t }}</span>
           </div>
 
-          <h2 [id]="category.id + '-title'">{{ category.title }}</h2>
+          <h2 [id]="category.id + '-title'">{{ category.titleKey | t }}</h2>
 
-          <p class="program-intro">{{ category.intro }}</p>
+          <p class="program-intro">{{ category.introKey | t }}</p>
 
-          <ul class="course-list" [attr.aria-label]="category.title + ' courses'">
+          <ul class="course-list" [attr.aria-label]="(category.titleKey | t) + ' ' + ('courses.courseCountLabel' | t)">
             @for (course of category.courses; track course) {
-              <li>{{ course }}</li>
+              <li>{{ course | t }}</li>
             }
           </ul>
         </div>
@@ -43,12 +43,10 @@
 
   <section class="courses-note" aria-labelledby="courses-note-title">
     <div>
-      <p class="eyebrow">Learning with care</p>
-      <h2 id="courses-note-title">Let's learn together, step by step</h2>
+      <p class="eyebrow">{{ 'courses.noteEyebrow' | t }}</p>
+      <h2 id="courses-note-title">{{ 'courses.noteTitle' | t }}</h2>
     </div>
-    <p>
-      Online classes and weekly sessions help girls keep learning safely, wherever they are.
-    </p>
-    <a routerLink="/contact" class="courses-note-cta">Join Now</a>
+    <p>{{ 'courses.noteText' | t }}</p>
+    <a routerLink="/contact" class="courses-note-cta">{{ 'courses.noteCta' | t }}</a>
   </section>
 </main>

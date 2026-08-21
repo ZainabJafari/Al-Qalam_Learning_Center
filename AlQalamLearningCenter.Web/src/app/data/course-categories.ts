@@ -1,102 +1,104 @@
+import type { TranslationKey } from '../i18n/translations';
+
 export type CourseCategory = {
   readonly id: string;
   readonly number: string;
-  readonly title: string;
-  readonly label: string;
-  readonly intro: string;
+  readonly titleKey: TranslationKey;
+  readonly labelKey: TranslationKey;
+  readonly introKey: TranslationKey;
   readonly imageSrc: string;
-  readonly imageAlt: string;
-  readonly courses: readonly string[];
+  readonly imageAltKey: TranslationKey;
+  readonly courses: readonly TranslationKey[];
 };
 
 export const courseCategories: readonly CourseCategory[] = [
   {
     id: 'academic-subjects',
     number: '1',
-    title: 'Academic Subjects',
-    label: 'Core Learning',
-    intro: 'Structured school subjects that strengthen reading, language, social understanding, and classroom confidence.',
+    titleKey: 'courses.academic.title',
+    labelKey: 'courses.academic.label',
+    introKey: 'courses.academic.intro',
     imageSrc: '/images/girl-studying.png',
-    imageAlt: 'Girl studying with books in a classroom',
+    imageAltKey: 'courses.academic.imageAlt',
     courses: [
-      'Dari / Persian Language',
-      'Social Studies',
-      'Religious Studies',
-      'Language & Literature'
+      'courses.academic.dari',
+      'courses.academic.social',
+      'courses.academic.religious',
+      'courses.academic.literature'
     ]
   },
   {
     id: 'islamic-studies',
     number: '2',
-    title: 'Islamic Studies',
-    label: 'Faith & Understanding',
-    intro: 'Careful religious education that supports Quran reading, memorization, Arabic learning, and deeper Islamic knowledge.',
+    titleKey: 'courses.islamic.title',
+    labelKey: 'courses.islamic.label',
+    introKey: 'courses.islamic.intro',
     imageSrc: '/images/IslamicStudies.jpg',
-    imageAlt: 'Student reading Islamic studies material',
+    imageAltKey: 'courses.islamic.imageAlt',
     courses: [
-      'Fiqh (Islamic Jurisprudence)',
-      'Tafsir (Quranic Exegesis)',
-      'Tajwid (Quran Recitation Rules)',
-      "Quran Reading (Qira'at)",
-      'Arabic Language',
-      'Hifz (Quran Memorization)'
+      'courses.islamic.fiqh',
+      'courses.islamic.tafsir',
+      'courses.islamic.tajwid',
+      'courses.islamic.qiraat',
+      'courses.islamic.arabic',
+      'courses.islamic.hifz'
     ]
   },
   {
     id: 'arts-creativity',
     number: '3',
-    title: 'Arts & Creativity',
-    label: 'Creative Expression',
-    intro: 'Hands-on creative classes where students build patience, imagination, practical making skills, and pride in their work.',
+    titleKey: 'courses.arts.title',
+    labelKey: 'courses.arts.label',
+    introKey: 'courses.arts.intro',
     imageSrc: '/images/swing.JPG',
-    imageAlt: 'Student learning practical and creative skills',
+    imageAltKey: 'courses.arts.imageAlt',
     courses: [
-      'Painting',
-      'Drawing',
-      'Calligraphy',
-      'Sewing & Tailoring'
+      'courses.arts.painting',
+      'courses.arts.drawing',
+      'courses.arts.calligraphy',
+      'courses.arts.sewing'
     ]
   },
   {
     id: 'life-skills',
     number: '4',
-    title: 'Life Skills',
-    label: 'Confidence & Voice',
-    intro: 'Practical personal development courses that help students communicate clearly, lead with care, and respond to real-life needs.',
+    titleKey: 'courses.life.title',
+    labelKey: 'courses.life.label',
+    introKey: 'courses.life.intro',
     imageSrc: '/images/firstAid.jpg',
-    imageAlt: 'First aid learning session',
+    imageAltKey: 'courses.life.imageAlt',
     courses: [
-      'Leadership',
-      'Creative Writing',
-      'Public Speaking',
-      'First Aid',
-      'Literacy Skills'
+      'courses.life.leadership',
+      'courses.life.writing',
+      'courses.life.speaking',
+      'courses.life.firstAid',
+      'courses.life.literacy'
     ]
   },
   {
     id: 'english-language-programs',
     number: '5',
-    title: 'English Language Programs',
-    label: 'Language Programs',
-    intro: 'Step-by-step English programs designed for communication, vocabulary, reading, writing, and future study opportunities.',
+    titleKey: 'courses.english.title',
+    labelKey: 'courses.english.label',
+    introKey: 'courses.english.intro',
     imageSrc: '/images/Englishprograms.jpg',
-    imageAlt: 'Student studying language notes with a laptop',
+    imageAltKey: 'courses.english.imageAlt',
     courses: [
-      'Certificate in English Language (CEL)',
-      'Diploma in English Language (DEL)'
+      'courses.english.certificate',
+      'courses.english.diploma'
     ]
   },
   {
     id: 'information-technology-programs',
     number: '6',
-    title: 'Information Technology Programs',
-    label: 'Digital Skills',
-    intro: 'Technology programs that introduce students to computer knowledge, digital confidence, and useful skills for modern learning.',
+    titleKey: 'courses.it.title',
+    labelKey: 'courses.it.label',
+    introKey: 'courses.it.intro',
     imageSrc: '/images/echnologyPrograms.jpg',
-    imageAlt: 'Student using a laptop for digital learning',
+    imageAltKey: 'courses.it.imageAlt',
     courses: [
-      'Certificate in Information Technology (CIT)',
-      'Diploma in Information Technology (DIT)'
+      'courses.it.certificate',
+      'courses.it.diploma'
     ]
   }
 ];

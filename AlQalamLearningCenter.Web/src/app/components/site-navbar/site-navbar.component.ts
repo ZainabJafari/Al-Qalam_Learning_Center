@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LanguageService } from '../../i18n/language.service';
 import { TranslatePipe } from '../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-site-navbar',
   standalone: true,
-  imports: [RouterLink, TranslatePipe],
+  imports: [RouterLink, RouterLinkActive, TranslatePipe],
   templateUrl: './site-navbar.component.html',
   styleUrls: ['./site-navbar.component.scss']
 })
@@ -17,4 +17,3 @@ export class SiteNavbarComponent {
     this.languageService.toggleLanguage();
   }
 }
-

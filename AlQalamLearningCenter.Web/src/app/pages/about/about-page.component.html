@@ -4,7 +4,7 @@
   <section class="about-hero" aria-labelledby="about-title">
     <div class="hero-copy">
       <p class="eyebrow">{{ 'about.heroEyebrow' | t }}</p>
-      <h1 id="about-title">About</h1>
+      <h1 id="about-title">{{ 'nav.about' | t }}</h1>
     </div>
   </section>
 
@@ -18,69 +18,69 @@
       <figure class="school-gallery-tile school-gallery-feature">
         <img
           src="/images/two.JPG"
-          alt="Students during a lesson at Al-Qalam Learning Center"
+          [alt]="'about.galleryLearningTogetherAlt' | t"
         />
-        <figcaption>Learning together</figcaption>
+        <figcaption>{{ 'about.galleryLearningTogether' | t }}</figcaption>
       </figure>
 
       <figure class="school-gallery-tile">
         <img
           src="/images/seven.JPG"
           loading="lazy"
-          alt="Students studying inside an Al-Qalam classroom"
+          [alt]="'about.galleryLearningInClassAlt' | t"
         />
-        <figcaption>Learning in class</figcaption>
+        <figcaption>{{ 'about.galleryLearningInClass' | t }}</figcaption>
       </figure>
 
       <figure class="school-gallery-tile">
         <img
           src="/images/three.png"
           loading="lazy"
-          alt="Students taking part in school activities"
+          [alt]="'about.galleryMomentsAlt' | t"
         />
-        <figcaption>Moments at Al-Qalam</figcaption>
+        <figcaption>{{ 'about.galleryMoments' | t }}</figcaption>
       </figure>
 
       <figure class="school-gallery-tile">
         <img
           src="/images/four.JPG"
           loading="lazy"
-          alt="Girls learning together at Al-Qalam"
+          [alt]="'about.galleryDailyLessonsAlt' | t"
         />
-        <figcaption>Daily lessons</figcaption>
+        <figcaption>{{ 'about.galleryDailyLessons' | t }}</figcaption>
       </figure>
 
       <figure class="school-gallery-tile">
         <img
           src="/images/five.JPG"
           loading="lazy"
-          alt="Students working in a classroom"
+          [alt]="'about.galleryConfidenceAlt' | t"
         />
-        <figcaption>Confidence in class</figcaption>
+        <figcaption>{{ 'about.galleryConfidence' | t }}</figcaption>
       </figure>
 
       <figure class="school-gallery-tile">
         <img
           src="/images/six.JPG"
           loading="lazy"
-          alt="A school lesson at Al-Qalam Learning Center"
+          [alt]="'about.galleryClassroomAlt' | t"
         />
-        <figcaption>In the classroom</figcaption>
+        <figcaption>{{ 'about.galleryClassroom' | t }}</figcaption>
       </figure>
 
       <figure class="school-gallery-tile">
         <img
           src="/images/one.JPG"
           loading="lazy"
-          alt="Students and learning materials at Al-Qalam"
+          [alt]="'about.galleryFutureSkillsAlt' | t"
         />
-        <figcaption>Skills for the future</figcaption>
+        <figcaption>{{ 'about.galleryFutureSkills' | t }}</figcaption>
       </figure>
     </div>
   </section>
 
   <div class="vision-marquee" aria-hidden="true">
-    <span>Vision &amp; Mission</span>
+    <span>{{ 'about.visionMissionLabel' | t }}</span>
     <span>*</span>
   </div>
 
@@ -107,7 +107,7 @@
       </p>
 
       <h2 id="about-story-title">
-        A story of <em>hope.</em>
+        {{ 'about.simpleStoryTitleStart' | t }} <em>{{ 'about.simpleStoryTitleHighlight' | t }}</em>
       </h2>
 
       <div class="about-story-article">
@@ -118,17 +118,18 @@
         <p>{{ 'about.storyContext' | t }}</p>
         <p>
           {{ 'about.storyFoundersStart' | t }}
-          <strong>Zainab Jafari and Zahra Hoseini</strong>
+          <strong>{{ 'about.storyFoundersSwedenNames' | t }}</strong>
           {{ 'about.storyFoundersMiddle' | t }}
-          <strong>Alamtab Rasooly</strong>
+          <strong>{{ 'about.storyFounderLocalName' | t }}</strong>
           {{ 'about.storyFoundersEnd' | t }}
         </p>
         <p>
           {{ 'about.storyFreeStart' | t }}
-          <strong>{{ 'about.storyFreeHighlight' | t }}</strong>,
+          <strong>{{ 'about.storyFreeHighlight' | t }}</strong>
           {{ 'about.storyFreeEnd' | t }}
         </p>
         <p>{{ 'about.storyMoreThanSchool' | t }}</p>
+        <p>{{ 'about.storyOpportunityBelief' | t }}</p>
       </div>
 
       <footer class="about-story-simple-footer">
@@ -139,48 +140,37 @@
 
     <section class="founders-showcase" aria-labelledby="founders-title">
       <div class="founders-heading">
-        <p class="founders-eyebrow">Our People</p>
-        <h2 id="founders-title">Meet the People Behind Al-Qalam</h2>
-        <p>
-          Al-Qalam was founded by three Afghan women brought together by a shared belief in education
-          and in the potential of every girl.
-        </p>
-        <p>
-          Behind the center is a personal commitment to creating something meaningful and lasting.
-          We work closely, support one another and carry a shared responsibility for the decisions,
-          challenges and hopes that come with building Al-Qalam.
-        </p>
-        <p>
-          For us, this work is deeply personal. Every student who walks through Al-Qalam's doors is a
-          reminder of why we began and why we remain committed to giving this work the care, dedication
-          and responsibility it deserves.
-        </p>
+        <p class="founders-eyebrow">{{ 'about.peopleEyebrow' | t }}</p>
+        <h2 id="founders-title">{{ 'about.peopleTitle' | t }}</h2>
+        <p>{{ 'about.peopleTextOne' | t }}</p>
+        <p>{{ 'about.peopleTextTwo' | t }}</p>
+        <p>{{ 'about.peopleTextThree' | t }}</p>
       </div>
 
-      <p class="founding-members-label">Founding Members</p>
+      <p class="founding-members-label">{{ 'about.foundingMembers' | t }}</p>
 
       <div class="founders-grid">
         <article class="founder-card">
-          <img src="/images/me.jpg" loading="lazy" alt="Portrait of Zainab Jafari" />
+          <img src="/images/me.jpg" loading="lazy" [alt]="'about.founderZainabAlt' | t" />
           <div>
             <h3>Zainab Jafari</h3>
-            <p>Founder &amp; Project Coordinator</p>
+            <p>{{ 'about.founderProjectCoordinator' | t }}</p>
           </div>
         </article>
 
         <article class="founder-card">
-          <img src="/images/me.jpg" loading="lazy" alt="Portrait of Zahra Hoseini" />
+          <img src="/images/me.jpg" loading="lazy" [alt]="'about.founderZahraAlt' | t" />
           <div>
             <h3>Zahra Hoseini</h3>
-            <p>Founder &amp; Project Coordinator</p>
+            <p>{{ 'about.founderProjectCoordinator' | t }}</p>
           </div>
         </article>
 
         <article class="founder-card">
-          <img src="/images/me.jpg" loading="lazy" alt="Portrait of Alamtab Rasooly" />
+          <img src="/images/Alam.jpg" loading="lazy" [alt]="'about.founderAlamtabAlt' | t" />
           <div>
             <h3>Alamtab Rasooly</h3>
-            <p>Founder &amp; Local Coordinator</p>
+            <p>{{ 'about.founderLocalCoordinator' | t }}</p>
           </div>
         </article>
       </div>

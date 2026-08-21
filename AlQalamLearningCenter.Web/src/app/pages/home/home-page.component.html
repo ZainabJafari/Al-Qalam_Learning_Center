@@ -3,30 +3,18 @@
 <main class="home-shell">
   <section class="hero-section" id="mission" [attr.aria-label]="'home.heroAriaLabel' | t">
     <div class="hero-content">
+      <p class="hero-brand">{{ 'common.brandAlt' | t }}</p>
       <p class="eyebrow">{{ 'home.eyebrow' | t }}</p>
-      <h1>{{ 'home.title' | t }}</h1>
+      <h1>
+        <span>{{ 'home.titleLineOne' | t }}</span>
+        <span>{{ 'home.titleLineTwo' | t }}</span>
+      </h1>
       <p class="hero-statement">{{ 'home.heroStatement' | t }}</p>
-      <!-- <p class="hero-text">
-        {{ 'home.heroText' | t }}
-      </p> -->
 
-      
-    </div>
-
-    <div class="hero-action-strip" [attr.aria-label]="'home.heroActionsLabel' | t">
-      <a class="hero-scroll-link" href="#education-reality">
-        <span>{{ 'home.scrollDown' | t }}</span>
-      </a>
-
-      <a class="hero-video-link" href="#story" [attr.aria-label]="'home.watchVideoAria' | t">
-        <span>{{ 'home.watchVideo' | t }}</span>
-        <span class="hero-play-icon" aria-hidden="true"></span>
-      </a>
-
-      <div>
-        <p>{{ 'home.heroDonationPrompt' | t }}</p>
-        <a routerLink="/donate">{{ 'home.makeDonation' | t }}</a>
-      </div>
+      <nav class="hero-actions" [attr.aria-label]="'home.heroActionsLabel' | t">
+        <a routerLink="/about" fragment="school">{{ 'home.aboutSchool' | t }}</a>
+        <a routerLink="/donate">{{ 'home.supportStudent' | t }}</a>
+      </nav>
     </div>
   </section>
 
@@ -80,19 +68,25 @@
         <a
           class="course-summary-card"
           routerLink="/courses"
-          [attr.aria-label]="category.title + ', ' + category.courseCount + ' courses'"
+          [attr.aria-label]="(category.titleKey | t) + ', ' + category.courseCount + ' ' + ('courses.courseCountLabel' | t)"
         >
           <img [src]="category.imageSrc" alt="" />
 
           <span class="course-summary-content">
-            <strong>{{ category.title }}</strong>
+            <strong>{{ category.titleKey | t }}</strong>
           </span>
         </a>
       }
     </div>
   </section>
 
-    <section class="education-reality-section" id="education-reality" aria-labelledby="education-reality-title">
+    <section
+      #educationReality
+      class="education-reality-section"
+      [class.is-reality-visible]="isRealityVisible"
+      id="education-reality"
+      aria-labelledby="education-reality-title"
+    >
     <div class="education-reality-stats" [attr.aria-label]="'home.realityStatsLabel' | t">
       <article>
         <strong>2.5M</strong>
