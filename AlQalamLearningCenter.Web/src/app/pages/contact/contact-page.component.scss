@@ -207,6 +207,7 @@ h1 {
 }
 
 .social-links a {
+  position: relative;
   display: grid;
   width: 3.6rem;
   height: 3.6rem;
@@ -215,6 +216,33 @@ h1 {
   border-radius: 50%;
   background: rgba(248, 255, 252, 0.08);
   color: #f8fffc;
+}
+
+.social-links a[data-tooltip]::after {
+  position: absolute;
+  right: 50%;
+  bottom: calc(100% + 0.65rem);
+  content: attr(data-tooltip);
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  background: #f8fffc;
+  color: var(--deep);
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(50%, 0.35rem);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.social-links a[data-tooltip]:hover::after,
+.social-links a[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translate(50%, 0);
 }
 
 .social-links a:hover,

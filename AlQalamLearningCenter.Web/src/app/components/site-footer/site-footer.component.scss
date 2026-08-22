@@ -15,7 +15,7 @@
 .footer-inner {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: 1.2fr 1fr 0.9fr;
   gap: clamp(2rem, 5vw, 4.5rem);
   min-height: 26rem;
   padding: clamp(3rem, 7vw, 5.4rem) 0 clamp(8rem, 13vw, 12rem);
@@ -56,6 +56,33 @@
   gap: 0.85rem;
 }
 
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.footer-contact-item svg {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: 2.15rem;
+  height: 2.15rem;
+  margin-top: 0.1rem;
+  padding: 0.48rem;
+  border: 1px solid rgba(244, 201, 109, 0.42);
+  border-radius: 999px;
+  background: rgba(244, 201, 109, 0.12);
+  fill: none;
+  stroke: #f4c96d;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.footer-contact-city {
+  display: block;
+}
+
 .social-links {
   display: flex;
   flex-wrap: wrap;
@@ -64,6 +91,7 @@
 }
 
 .social-links a {
+  position: relative;
   display: grid;
   width: 2.55rem;
   height: 2.55rem;
@@ -71,6 +99,33 @@
   border-radius: 999px;
   background: #f8fffc;
   color: #022d33;
+}
+
+.social-links a[data-tooltip]::after {
+  position: absolute;
+  right: 50%;
+  bottom: calc(100% + 0.55rem);
+  content: attr(data-tooltip);
+  border-radius: 999px;
+  padding: 0.42rem 0.66rem;
+  background: #f8fffc;
+  color: #022d33;
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(50%, 0.3rem);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.social-links a[data-tooltip]:hover::after,
+.social-links a[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translate(50%, 0);
 }
 
 .social-links svg {

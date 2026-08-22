@@ -13,9 +13,12 @@
   <section class="program-list" aria-label="Course categories">
     @for (category of categories; track category.id; let odd = $odd) {
       <article
+        #programSection
         class="program-section"
         [class.program-section-reversed]="odd"
+        [class.is-visible]="visibleProgramIds.has(category.id)"
         [attr.aria-labelledby]="category.id + '-title'"
+        [attr.data-program-id]="category.id"
       >
         <div class="program-image">
           <img [src]="category.imageSrc" [alt]="category.imageAltKey | t" />

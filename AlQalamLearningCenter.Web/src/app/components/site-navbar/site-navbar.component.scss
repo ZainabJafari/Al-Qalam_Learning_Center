@@ -1,10 +1,11 @@
 ﻿:host {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 20;
+  transition: all 220ms ease;
 }
 
 .site-navbar {
@@ -19,6 +20,8 @@
   background: rgba(6, 41, 37, 0.88);
   box-shadow: 0 18px 50px rgba(6, 41, 37, 0.22);
   backdrop-filter: blur(18px);
+  border: 1px solid transparent;
+  transition: all 220ms ease;
 }
 
 :host(.home-navbar) .site-navbar {
@@ -87,6 +90,35 @@
   box-shadow: none;
 }
 
+:host(.is-scrolled) {
+  top: clamp(0.55rem, 1.4vw, 0.9rem);
+  right: clamp(0.65rem, 2vw, 2rem);
+  left: clamp(0.65rem, 2vw, 2rem);
+}
+
+:host(.is-scrolled) .site-navbar {
+  min-height: 3.9rem;
+  border-color: rgba(184, 225, 221, 0.18);
+  border-radius: 999px;
+  padding: 0.32rem clamp(0.75rem, 2vw, 1.1rem);
+  background: rgba(12, 86, 82, 0.9);
+  box-shadow: 0 16px 44px rgba(0, 61, 69, 0.18);
+  backdrop-filter: blur(20px);
+}
+
+:host(.is-scrolled) .brand-logo {
+  width: 8.1rem;
+  height: 3.1rem;
+}
+
+:host(.is-scrolled) .nav-cta {
+  border-color: rgba(244, 201, 109, 0.78);
+  padding: 0.56rem 0.86rem;
+  background: #f4c96d;
+  color: #062925;
+  box-shadow: 0 12px 28px rgba(244, 201, 109, 0.24);
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -100,6 +132,7 @@
   height: 5.6rem;
   object-fit: contain;
   object-position: center;
+  transition: all 220ms ease;
 }
 
 .nav-links {
@@ -236,6 +269,15 @@
 }
 
 @media (max-width: 720px) {
+  :host(.is-scrolled) {
+    right: 0.6rem;
+    left: 0.6rem;
+  }
+
+  :host(.is-scrolled) .site-navbar {
+    border-radius: 24px;
+  }
+
   .site-navbar {
     min-height: auto;
     align-items: stretch;

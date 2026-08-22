@@ -4,7 +4,7 @@
   <section class="about-hero" aria-labelledby="about-title">
     <div class="hero-copy">
       <p class="eyebrow">{{ 'about.heroEyebrow' | t }}</p>
-      <h1 id="about-title">{{ 'nav.about' | t }}</h1>
+      <h1 id="about-title">{{ 'about.pageTitle' | t }}</h1>
     </div>
   </section>
 
@@ -159,7 +159,9 @@
         </article>
 
         <article class="founder-card">
-          <img src="/images/me.jpg" loading="lazy" [alt]="'about.founderZahraAlt' | t" />
+          <div class="founder-avatar-placeholder" role="img" [attr.aria-label]="'about.founderZahraAlt' | t">
+            <span aria-hidden="true">ZH</span>
+          </div>
           <div>
             <h3>Zahra Hoseini</h3>
             <p>{{ 'about.founderProjectCoordinator' | t }}</p>
