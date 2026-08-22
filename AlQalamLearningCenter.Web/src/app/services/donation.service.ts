@@ -6,13 +6,13 @@ import {
   CreateDonationRequest,
   DonationResponse
 } from '../types/donation.models';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DonationService {
-  // Local API base for development. We can move this to environment config later.
-  private readonly apiBaseUrl = 'http://localhost:5256/api';
+  private readonly apiBaseUrl = environment.apiBaseUrl;
 
   constructor(private readonly http: HttpClient) {}
 

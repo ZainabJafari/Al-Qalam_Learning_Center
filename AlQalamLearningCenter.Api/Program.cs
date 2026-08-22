@@ -20,14 +20,18 @@ builder.Services.AddScoped<IStripeCheckoutService, StripeCheckoutService>();
 builder.Services.Configure<StripeSettings>(
     builder.Configuration.GetSection("Stripe"));
 
-const string localFrontendCorsPolicy = "LocalFrontendCorsPolicy";
+const string frontendCorsPolicy = "FrontendCorsPolicy";
+var allowedOrigins = builder.Configuration
+    .GetSection("Cors:AllowedOrigins")
+    .Get<string[]>()
+    ?? Array.Empty<string>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(localFrontendCorsPolicy, policy =>
+    options.AddPolicy(frontendCorsPolicy, policy =>
     {
         policy
-            .WithOrigins("http://localhost:4200")
+            .WithOrigins(allowedOrigins)
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -52,7 +56,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseCors(localFrontendCorsPolicy);
+app.UseCors(frontendCorsPolicy);
 
 app.UseHttpsRedirection();
 
