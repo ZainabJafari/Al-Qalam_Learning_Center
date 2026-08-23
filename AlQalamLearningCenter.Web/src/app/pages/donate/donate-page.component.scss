@@ -11,8 +11,8 @@
   position: relative;
   display: grid;
   align-items: center;
-  min-height: clamp(270px, 26vw, 360px);
-  padding: clamp(6.8rem, 8vw, 8rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2)) clamp(2.8rem, 5vw, 4rem);
+  min-height: clamp(250px, 26vw, 340px);
+  padding: clamp(3.2rem, 6vw, 4.4rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2)) clamp(2.8rem, 5vw, 4rem);
   overflow: hidden;
   background:
     radial-gradient(circle at 76% 34%, rgba(244, 201, 109, 0.22), transparent 28%),
@@ -193,8 +193,8 @@ h1 {
 
 @media (max-width: 620px) {
   .donate-hero {
-    min-height: 320px;
-    padding-top: 8.8rem;
+    min-height: 280px;
+    padding-top: 3.4rem;
   }
 
   h1 {

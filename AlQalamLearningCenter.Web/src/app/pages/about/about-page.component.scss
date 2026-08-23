@@ -19,9 +19,9 @@
   position: relative;
   display: grid;
   align-items: center;
-  min-height: clamp(260px, 24vw, 340px);
+  min-height: clamp(240px, 24vw, 320px);
   overflow: hidden;
-  padding: clamp(6.8rem, 8vw, 8rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2)) clamp(2.6rem, 4vw, 3.6rem);
+  padding: clamp(3.2rem, 6vw, 4.4rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2)) clamp(2.6rem, 4vw, 3.6rem);
   color: #f8fffc;
   background:
     linear-gradient(90deg, rgba(0, 29, 36, 0.72) 0%, rgba(0, 124, 122, 0.48) 38%, rgba(0, 63, 73, 0.5) 67%, rgba(0, 20, 27, 0.76) 100%),
@@ -224,8 +224,13 @@ h3 {
   }
 
   .about-hero {
-    min-height: 310px;
-    padding-top: 8.5rem;
+    min-height: 260px;
+    padding-top: 3.4rem;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 17vw, 4.5rem);
+    line-height: 1;
   }
 
   .support-section .primary-link {

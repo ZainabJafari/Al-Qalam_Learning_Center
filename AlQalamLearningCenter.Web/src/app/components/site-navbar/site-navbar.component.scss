@@ -1,11 +1,7 @@
 ﻿:host {
   display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 20;
-  transition: all 220ms ease;
 }
 
 .site-navbar {
@@ -22,6 +18,13 @@
   backdrop-filter: blur(18px);
   border: 1px solid transparent;
   transition: all 220ms ease;
+}
+
+:host(.home-navbar) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 :host(.home-navbar) .site-navbar {
@@ -52,19 +55,13 @@
   font-size: 0.92rem;
 }
 
-:host(.course-navbar) {
-  top: clamp(0.8rem, 1.8vw, 1.4rem);
-  right: clamp(0.8rem, 1.8vw, 1.4rem);
-  left: clamp(0.8rem, 1.8vw, 1.4rem);
-}
-
 :host(.course-navbar) .site-navbar {
   min-height: 5rem;
   border-radius: 0;
   padding: 0.65rem clamp(1rem, 3vw, 2.2rem);
-  background: transparent;
-  box-shadow: none;
-  backdrop-filter: none;
+  background: rgba(6, 41, 37, 0.94);
+  box-shadow: 0 14px 42px rgba(6, 41, 37, 0.18);
+  backdrop-filter: blur(14px);
 }
 
 :host(.course-navbar) .nav-links a,
@@ -88,35 +85,6 @@
   background: #f8fffc;
   color: #003d45;
   box-shadow: none;
-}
-
-:host(.is-scrolled) {
-  top: clamp(0.55rem, 1.4vw, 0.9rem);
-  right: clamp(0.65rem, 2vw, 2rem);
-  left: clamp(0.65rem, 2vw, 2rem);
-}
-
-:host(.is-scrolled) .site-navbar {
-  min-height: 3.9rem;
-  border-color: rgba(184, 225, 221, 0.18);
-  border-radius: 999px;
-  padding: 0.32rem clamp(0.75rem, 2vw, 1.1rem);
-  background: rgba(12, 86, 82, 0.9);
-  box-shadow: 0 16px 44px rgba(0, 61, 69, 0.18);
-  backdrop-filter: blur(20px);
-}
-
-:host(.is-scrolled) .brand-logo {
-  width: 8.1rem;
-  height: 3.1rem;
-}
-
-:host(.is-scrolled) .nav-cta {
-  border-color: rgba(244, 201, 109, 0.78);
-  padding: 0.56rem 0.86rem;
-  background: #f4c96d;
-  color: #062925;
-  box-shadow: 0 12px 28px rgba(244, 201, 109, 0.24);
 }
 
 .brand {
@@ -269,15 +237,6 @@
 }
 
 @media (max-width: 720px) {
-  :host(.is-scrolled) {
-    right: 0.6rem;
-    left: 0.6rem;
-  }
-
-  :host(.is-scrolled) .site-navbar {
-    border-radius: 24px;
-  }
-
   .site-navbar {
     min-height: auto;
     align-items: stretch;
