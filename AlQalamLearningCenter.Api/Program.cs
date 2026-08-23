@@ -12,7 +12,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(
     options =>
         options.UseSqlServer(
             builder.Configuration.GetConnectionString(
-                "DefaultConnection")));
+                "DefaultConnection"),
+            sqlOptions => sqlOptions.EnableRetryOnFailure()));
 
 builder.Services.AddScoped<IDonationService, DonationService>();
 builder.Services.AddScoped<IStripeCheckoutService, StripeCheckoutService>();
@@ -49,6 +50,13 @@ builder.Services
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+if (app.Environment.IsProduction())
+{
+    using var scope = app.Services.CreateScope();
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    await dbContext.Database.MigrateAsync();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
