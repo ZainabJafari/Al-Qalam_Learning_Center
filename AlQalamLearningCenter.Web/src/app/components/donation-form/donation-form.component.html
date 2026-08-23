@@ -25,10 +25,10 @@
   </button>
 </div>
 
-<div class="donation-options" [attr.aria-label]="'donationForm.amountLabel' | t">
+<div class="donation-options amount-options" [attr.aria-label]="'donationForm.amountLabel' | t">
   <button
     class="option-button"
-    [class.is-selected]="selectedAmountMinor === 2500"
+    [class.is-selected]="!isCustomAmountSelected && selectedAmountMinor === 2500"
     type="button"
     (click)="selectAmount(2500)"
   >
@@ -36,7 +36,7 @@
   </button>
   <button
     class="option-button"
-    [class.is-selected]="selectedAmountMinor === 5500"
+    [class.is-selected]="!isCustomAmountSelected && selectedAmountMinor === 5500"
     type="button"
     (click)="selectAmount(5500)"
   >
@@ -44,12 +44,40 @@
   </button>
   <button
     class="option-button"
-    [class.is-selected]="selectedAmountMinor === 10000"
+    [class.is-selected]="!isCustomAmountSelected && selectedAmountMinor === 10000"
     type="button"
     (click)="selectAmount(10000)"
   >
     $100
   </button>
+  <button
+    class="option-button"
+    [class.is-selected]="isCustomAmountSelected"
+    type="button"
+    (click)="selectCustomAmount()"
+  >
+    {{ 'donationForm.customAmount' | t }}
+  </button>
+</div>
+
+<div class="custom-amount-panel" [hidden]="!isCustomAmountSelected">
+  <label>
+    {{ 'donationForm.customAmountInput' | t }}
+    <span class="custom-amount-input">
+      <span aria-hidden="true">$</span>
+      <input
+        name="customAmount"
+        type="number"
+        min="1"
+        step="1"
+        inputmode="decimal"
+        [(ngModel)]="customAmountDollars"
+        (ngModelChange)="setCustomAmount($event)"
+        placeholder="50"
+      />
+    </span>
+  </label>
+  <p>{{ 'donationForm.customAmountHint' | t }}</p>
 </div>
 
 <div class="donor-fields">

@@ -14,9 +14,13 @@ import { CreateDonationRequest, DonationFrequency } from '../../types/donation.m
   styleUrls: ['./donation-form.component.scss']
 })
 export class DonationFormComponent {
+  private readonly minimumDonationMinor = 100;
+
   isDonationLoading = false;
   donationErrorKey = '';
   selectedAmountMinor = 2500;
+  customAmountDollars: number | null = null;
+  isCustomAmountSelected = false;
   selectedFrequency: DonationFrequency = 'OneTime';
   donorName = '';
   donorEmail = '';
@@ -29,6 +33,22 @@ export class DonationFormComponent {
 
   selectAmount(amountMinor: number): void {
     this.selectedAmountMinor = amountMinor;
+    this.customAmountDollars = null;
+    this.isCustomAmountSelected = false;
+    this.clearAmountError();
+  }
+
+  selectCustomAmount(): void {
+    this.isCustomAmountSelected = true;
+    this.customAmountDollars ??= this.selectedAmountMinor / 100;
+    this.setCustomAmount(this.customAmountDollars);
+  }
+
+  setCustomAmount(amountDollars: number | null): void {
+    this.isCustomAmountSelected = true;
+    this.customAmountDollars = amountDollars;
+    this.selectedAmountMinor = this.toAmountMinor(amountDollars);
+    this.clearAmountError();
   }
 
   selectFrequency(frequency: DonationFrequency): void {
@@ -36,7 +56,16 @@ export class DonationFormComponent {
   }
 
   get selectedAmountLabel(): string {
-    return `$${this.selectedAmountMinor / 100}`;
+    const wholeDollars = Math.floor(this.selectedAmountMinor / 100);
+    const cents = this.selectedAmountMinor % 100;
+
+    return cents === 0
+      ? `$${wholeDollars}`
+      : `$${wholeDollars}.${cents.toString().padStart(2, '0')}`;
+  }
+
+  get hasValidDonationAmount(): boolean {
+    return this.selectedAmountMinor >= this.minimumDonationMinor;
   }
 
   get selectedFrequencyLabel(): string {
@@ -56,8 +85,14 @@ export class DonationFormComponent {
   }
 
   startDonation(): void {
-    this.isDonationLoading = true;
     this.donationErrorKey = '';
+
+    if (!this.hasValidDonationAmount) {
+      this.donationErrorKey = 'donationForm.amountError';
+      return;
+    }
+
+    this.isDonationLoading = true;
 
     const request: CreateDonationRequest = {
       amountMinor: this.selectedAmountMinor,
@@ -91,5 +126,18 @@ export class DonationFormComponent {
 
     return text.length > 0 ? text : null;
   }
-}
 
+  private toAmountMinor(amountDollars: number | null): number {
+    if (typeof amountDollars !== 'number' || !Number.isFinite(amountDollars)) {
+      return 0;
+    }
+
+    return Math.max(0, Math.round(amountDollars * 100));
+  }
+
+  private clearAmountError(): void {
+    if (this.donationErrorKey === 'donationForm.amountError') {
+      this.donationErrorKey = '';
+    }
+  }
+}

@@ -37,6 +37,66 @@
   color: #0f5c56;
 }
 
+.custom-amount-panel {
+  margin: -0.1rem 0 1rem;
+  max-width: 19rem;
+  font-family: var(--font-sans);
+}
+
+.custom-amount-panel[hidden] {
+  display: none;
+}
+
+.custom-amount-panel label {
+  display: grid;
+  gap: 0.42rem;
+  color: #062925;
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.custom-amount-input {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  border: 1px solid rgba(0, 61, 69, 0.12);
+  border-radius: 8px;
+  background: #fbfdfc;
+  color: rgba(6, 41, 37, 0.7);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.custom-amount-input:focus-within {
+  border-color: rgba(58, 145, 136, 0.72);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(58, 145, 136, 0.12);
+}
+
+.custom-amount-input span {
+  padding-left: 1rem;
+  font-weight: 900;
+}
+
+.custom-amount-input input {
+  min-width: 0;
+  border: 0;
+  padding: 0.95rem 1rem 0.95rem 0.45rem;
+  background: transparent;
+  color: #062925;
+  font: inherit;
+  outline: none;
+}
+
+.custom-amount-panel p {
+  margin: 0.45rem 0 0;
+  color: rgba(6, 41, 37, 0.58);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
 .donor-fields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -159,6 +219,14 @@
   .option-button {
     min-width: 0;
     padding-inline: 0.75rem;
+  }
+
+  .amount-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .custom-amount-panel {
+    max-width: none;
   }
 
   .donor-fields {
