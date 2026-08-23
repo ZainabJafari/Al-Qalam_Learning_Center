@@ -11,9 +11,9 @@
   position: relative;
   display: grid;
   align-items: center;
-  min-height: clamp(250px, 26vw, 340px);
+  min-height: clamp(270px, 26vw, 360px);
   overflow: hidden;
-  padding: clamp(3.2rem, 6vw, 4.4rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2)) clamp(2.8rem, 5vw, 4rem);
+  padding: clamp(6.8rem, 8vw, 8rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2)) clamp(2.8rem, 5vw, 4rem);
   color: #f8fffc;
   background:
     linear-gradient(90deg, rgba(0, 29, 36, 0.74) 0%, rgba(0, 124, 122, 0.48) 40%, rgba(0, 20, 27, 0.76) 100%),
@@ -282,8 +282,8 @@ h1 {
   }
 
   .contact-hero {
-    min-height: 270px;
-    padding-top: 3.4rem;
+    min-height: 310px;
+    padding-top: 8rem;
   }
 
   h1 {

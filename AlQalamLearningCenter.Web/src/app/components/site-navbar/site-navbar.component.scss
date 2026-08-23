@@ -27,6 +27,13 @@
   right: 0;
 }
 
+:host(.course-navbar) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 :host(.home-navbar) .site-navbar {
   background: transparent;
   box-shadow: none;
@@ -59,9 +66,9 @@
   min-height: 5rem;
   border-radius: 0;
   padding: 0.65rem clamp(1rem, 3vw, 2.2rem);
-  background: rgba(6, 41, 37, 0.94);
-  box-shadow: 0 14px 42px rgba(6, 41, 37, 0.18);
-  backdrop-filter: blur(14px);
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 :host(.course-navbar) .nav-links a,
@@ -73,6 +80,12 @@
 :host(.course-navbar) .nav-links a:focus-visible,
 :host(.course-navbar) .nav-links a.is-active {
   color: #E7B94F;
+}
+
+:host(.course-navbar) .nav-links a,
+:host(.course-navbar) .language-toggle,
+:host(.course-navbar) .nav-cta {
+  text-shadow: 0 2px 12px rgba(0, 29, 36, 0.5);
 }
 
 :host(.course-navbar) .language-toggle {
@@ -241,10 +254,19 @@
     min-height: auto;
     align-items: stretch;
     flex-wrap: wrap;
+    gap: 0.45rem 0.65rem;
+    padding: 0.55rem 0.8rem 0.65rem;
   }
 
   .brand {
-    flex: 1 1 auto;
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .brand-logo,
+  :host(.home-navbar) .brand-logo {
+    width: 5.8rem;
+    height: 4.1rem;
   }
 
   .nav-links {
@@ -253,8 +275,12 @@
     margin-left: 0;
     margin-right: 0;
     justify-content: space-around;
-    border-top: 1px solid rgba(184, 225, 221, 0.16);
-    padding-top: 0.7rem;
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
   }
 }
 

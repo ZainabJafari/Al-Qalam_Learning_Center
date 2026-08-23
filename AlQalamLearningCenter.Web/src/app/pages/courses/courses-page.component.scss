@@ -18,9 +18,9 @@
   position: relative;
   display: grid;
   align-items: center;
-  min-height: clamp(280px, 27vw, 370px);
+  min-height: clamp(300px, 27vw, 390px);
   overflow: hidden;
-  padding: clamp(3.4rem, 7vw, 4.8rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2)) clamp(3rem, 5vw, 4.5rem);
+  padding: clamp(7rem, 9vw, 8.5rem) max(clamp(1rem, 6vw, 5rem), calc((100vw - 1180px) / 2)) clamp(3rem, 5vw, 4.5rem);
   color: #f5fffd;
   background: #062925;
 }
@@ -309,8 +309,8 @@ h1 {
   }
 
   .courses-hero {
-    min-height: 300px;
-    padding-top: 3.5rem;
+    min-height: 340px;
+    padding-top: 8.3rem;
   }
 
   h1 {
