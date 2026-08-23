@@ -257,7 +257,7 @@
 @media (max-width: 720px) {
   .site-navbar {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr auto;
     align-items: center;
     min-height: auto;
     gap: 0.55rem 0.75rem;
