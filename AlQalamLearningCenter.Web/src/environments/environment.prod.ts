@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://REPLACE_WITH_API_DOMAIN/api'
+  apiBaseUrl: 'https://alqalam-prod-api-zainab-hehxd9eefahec9dr.swedencentral-01.azurewebsites.net/api'
 };
