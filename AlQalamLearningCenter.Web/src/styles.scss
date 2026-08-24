@@ -843,7 +843,7 @@ a[href^='tel:'] {
 
 .home-shell .latest-updates-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
   gap: 1.35rem;
 }
 
@@ -892,6 +892,9 @@ a[href^='tel:'] {
 }
 
 .home-shell .latest-update-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   align-self: flex-start;
   width: fit-content;
   min-height: 3.3rem;
@@ -1426,6 +1429,27 @@ a[href^='tel:'] {
 }
 
 @media (max-width: 1180px) {
+  .home-shell .latest-updates-section {
+    padding: clamp(2.5rem, 7vw, 4rem) 1rem;
+  }
+
+  .home-shell .latest-updates-inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: min(100%, 960px);
+    padding: clamp(0.9rem, 2vw, 1.2rem);
+  }
+
+  .home-shell .latest-updates-heading {
+    min-height: auto;
+    padding: clamp(1.2rem, 3vw, 1.6rem);
+  }
+
+  .home-shell .latest-updates-heading h2 {
+    max-width: 16ch;
+    font-size: clamp(2.25rem, 6vw, 3.65rem);
+  }
+
   .home-shell .course-summary-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1511,17 +1535,8 @@ a[href^='tel:'] {
     grid-template-columns: 6rem minmax(18rem, 1fr) minmax(18rem, 1fr);
   }
 
-  .home-shell .latest-updates-section {
-    padding: clamp(2.5rem, 7vw, 4rem) 1rem;
-  }
-
-  .home-shell .latest-updates-inner {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
   .home-shell .latest-updates-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   }
 
   .home-shell .education-reality-section {
@@ -1648,15 +1663,36 @@ a[href^='tel:'] {
 
   .home-shell .latest-updates-grid {
     grid-template-columns: 1fr;
+    gap: 0.9rem;
   }
 
   .home-shell .latest-updates-heading {
-    padding: 1.35rem;
+    padding: 1.15rem 0.85rem;
+  }
+
+  .home-shell .latest-updates-heading h2 {
+    max-width: 12ch;
+    font-size: clamp(2rem, 10vw, 2.75rem);
   }
 
   .home-shell .latest-update-card {
     min-height: auto;
-    padding: 1.25rem;
+    padding: 1.2rem;
+  }
+
+  .home-shell .latest-update-card h3 {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+  }
+
+  .home-shell .latest-update-card p {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .home-shell .latest-update-card a {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
   }
 
   .home-shell .education-reality-section {
