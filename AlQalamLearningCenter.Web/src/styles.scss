@@ -1712,8 +1712,24 @@ a[href^='tel:'] {
   }
 
   .about-shell .vision-marquee {
+    align-items: flex-start;
     justify-content: flex-start;
-    font-size: clamp(3.6rem, 18vw, 5.6rem);
+    min-height: auto;
+    padding: 2.4rem 1rem;
+    font-size: clamp(3rem, 14vw, 4.4rem);
+    line-height: 0.92;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .about-shell .vision-marquee span:first-child {
+    display: block;
+    max-width: min(100%, 20rem);
+    text-wrap: balance;
+  }
+
+  .about-shell .vision-marquee span:last-child {
+    display: none;
   }
 
   .home-shell .home-closing-section nav,
